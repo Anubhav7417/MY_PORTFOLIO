@@ -1,0 +1,3 @@
+# External dependencies for the Portfolio Website
+Font Awesome >= 6.5.2
+Google Fonts (Poppins)
