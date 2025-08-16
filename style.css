@@ -1,0 +1,992 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* Advanced animated background - Stormy Morning Theme */
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #2f3640 0%, #2c3e50 100%); /* Deep storm blues/greys */
+    color: white;
+    position: relative;
+}
+
+body::before, body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+body::before {
+    width: 400px;
+    height: 400px;
+    background: #60a3bc; /* Muted blue accent */
+    top: -100px;
+    left: -100px;
+    animation: moveCircle1 12s infinite alternate;
+}
+
+body::after {
+    width: 300px;
+    height: 300px;
+    background: #60a3bc; /* Muted blue accent */
+    bottom: -80px;
+    right: -80px;
+    animation: moveCircle2 14s infinite alternate;
+}
+
+@keyframes moveCircle1 {
+    0% { top: -100px; left: -100px; }
+    100% { top: 80px; left: 120px; }
+}
+
+@keyframes moveCircle2 {
+    0% { bottom: -80px; right: -80px; }
+    100% { bottom: 60px; right: 100px; }
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #60a3bc; /* Muted blue accent */
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #60a3bc88; /* Muted blue shadow */
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #81ecec; /* Lighter blue accent on hover */
+    border-bottom: 3px solid #81ecec; /* Lighter blue border */
+    text-shadow: 0 0 8px #81ecec55; /* Lighter blue shadow */
+}
+
+@media(max-width:995px){
+    header {
+        padding: 1rem 4%;
+    }
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #60a3bc; /* Muted blue border */
+        border-bottom: 3px solid #60a3bc; /* Muted blue border */
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #2c3e50; /* Darker blue-grey background */
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #81ecec; /* Lighter blue border */
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Add spacing between all sections */
+section{
+    padding: 5rem 9% 5rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 4cm;
+    margin-bottom: 4cm;
+}
+
+/* Add extra space below the home section */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: transparent;
+    margin-bottom: 5cm;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 0 10px #60a3bc22; /* Muted blue shadow */
+}
+
+span{
+    color: #60a3bc; /* Muted blue accent */
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px #60a3bc22; /* Muted blue shadow */
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    /* Keeping text without a box for a cleaner look */
+}
+
+.home-img{
+    border-radius: 50%;
+    box-shadow: 0 0 40px #60a3bc44; /* Muted blue shadow */
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    max-width: 350px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #60a3bc; /* Muted blue shadow */
+    cursor: pointer;
+    transition: 0.2s linear, box-shadow 0.4s;
+}
+
+.home-img img:hover{
+    box-shadow: 0 0 60px #60a3bc, 0 0 120px #60a3bc44; /* Muted blue shadows on hover */
+    transform: scale(1.05);
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #60a3bc; /* Muted blue border */
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #60a3bc; /* Muted blue accent */
+    box-shadow: 0 0 10px #60a3bc22; /* Muted blue shadow */
+}
+
+.social-icons a:hover{
+    color: #2c3e50; /* Dark blue-grey on hover */
+    transform: scale(1.3) translateY(-5px);
+    background-color: #60a3bc; /* Muted blue background on hover */
+    box-shadow: 0  0 25px #60a3bc; /* Muted blue shadow on hover */
+}
+
+.home-btns {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: linear-gradient(90deg, #2c3e50 60%, #34495e 100%); /* Darker blue-grey gradient */
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #60a3bc; /* Muted blue accent */
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #60a3bc; /* Muted blue border */
+    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px #60a3bc22; /* Muted blue shadow */
+}
+
+.btn:hover,
+.btn.btn-download:hover,
+.btn.project-link:hover {
+    transform: scale(1.07);
+    background: #60a3bc; /* Muted blue background on hover */
+    color: #2c3e50; /* Dark blue-grey on hover */
+    box-shadow: 0 0 25px #60a3bc; /* Muted blue shadow on hover */
+}
+
+.btn.btn-download {
+    background: linear-gradient(90deg, #34495e 60%, #60a3bc22 100%); /* Lighter blue-grey gradient with transparent accent */
+    color: #60a3bc; /* Muted blue accent */
+    border: 2px solid #60a3bc; /* Muted blue border */
+    margin-left: 1rem;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Content Writer";
+    color: #60a3bc; /* Muted blue accent */
+    animation: words 20s infinite;
+}
+
+/* Corrected CSS for the blinking cursor */
+.typing-text span::after{
+    content: "";
+    position: absolute;
+    width: 3px; /* Make it a thin cursor line */
+    height: 100%;
+    background-color: transparent; /* Ensure no black background */
+    border-left: 3px solid transparent; /* Start transparent, then blink to color */
+    right: -8px; /* Correcting the unit */
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    0%, 100%{
+        border-left-color: transparent; /* Cursor off */
+    }
+    50%{
+        border-left-color: #60a3bc; /* Cursor on (accent color) */
+    }
+}
+
+@keyframes words{
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Web Designer";
+    }
+    61%, 80%{
+        content: "Editor";
+    }
+    81%, 100%{
+        content: "Content Writer";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+        padding-top: 10rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+        padding-top: 10rem;
+        text-align: center;
+        margin-bottom: 2.5cm;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-content p {
+        font-size: 1.4rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        max-width: 300px;
+        margin-top: 4rem;
+    }
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+    section {
+        margin-top: 2cm;
+        margin-bottom: 2cm;
+    }
+}
+
+/* --- Advanced CSS for common sections (Hackathon, Certification, Events, Education, Services, Experience, Contact, Hire Me) --- */
+
+.certification,
+.events,
+.education,
+.services,
+.experience,
+.contact,
+.hire-me,
+.projects {
+    background: linear-gradient(120deg, #2c3e50 60%, #34495e 100%); /* Darker blue-grey gradient */
+    border-radius: 2rem;
+    margin: 4rem 0;
+    padding: 3rem 9%;
+    box-shadow: 0 0 25px #60a3bc33; /* Muted blue shadow */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.certification h2,
+.events h2,
+.education h2,
+.services h2,
+.experience h2,
+.contact h2,
+.hire-me h2,
+.projects h2 {
+    font-size: 3rem;
+    color: #60a3bc; /* Muted blue accent */
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px #60a3bc22; /* Muted blue shadow */
+    text-align: center;
+}
+
+.certification ul,
+.events ul,
+.education ul,
+.experience ul { /* Note: services, contact, and hire-me have different inner structures */
+    list-style: none;
+    padding-left: 0;
+}
+
+.certification li,
+.events li,
+.education li,
+.experience li {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #34495e 60%, #2c3e50 100%); /* Lighter blue-grey gradient */
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 10px #60a3bc22; /* Muted blue shadow */
+    color: #d1d8e0; /* Lighter text for better contrast */
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.certification li:hover,
+.events li:hover,
+.education li:hover,
+.experience li:hover {
+    background: #60a3bc22; /* Transparent muted blue on hover */
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #60a3bc44; /* Muted blue shadow on hover */
+}
+
+/* Icons for Hackathon, Cert, Events (general list items) */
+.certification li::before,
+.events li::before {
+    content: "\f164"; /* general list icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #60a3bc; /* Muted blue accent */
+    font-size: 2rem;
+    margin-right: 1rem;
+    display: inline-block;
+    position: absolute;
+    top: 1.8rem;
+    left: 2rem;
+}
+.certification li strong,
+.events li strong {
+    margin-left: 3rem; /* Offset for icon */
+}
+.certification li .file-section,
+.events li .file-section {
+    margin-left: 3rem; /* Offset for icon */
+}
+
+
+/* Specific styling for Education list items */
+.education li::before {
+    content: "\f53d"; /* Graduation cap icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #60a3bc; /* Muted blue accent */
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.education li strong {
+    font-size: 2rem;
+    margin-left: 3rem; /* Add spacing for icon */
+}
+
+.education li p {
+    font-size: 1.6rem;
+    color: #d1d8e0; /* Lighter text */
+    margin-left: 3rem;
+}
+
+/* Specific styling for Experience list items */
+.experience li::before {
+    content: "\f0b1"; /* Briefcase icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #60a3bc; /* Muted blue accent */
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+.experience li strong {
+    font-size: 2rem;
+    margin-left: 3rem; /* Add spacing for icon */
+}
+.experience li p {
+    font-size: 1.6rem;
+    color: #d1d8e0; /* Lighter text */
+    margin-left: 3rem;
+}
+.experience li ul {
+    list-style: disc; /* Use discs for bullet points inside experience */
+    margin-top: 1rem;
+    margin-left: 3rem; /* Indent the bullet points */
+}
+.experience li ul li {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: none; /* No background for inner list items */
+    box-shadow: none; /* No shadow for inner list items */
+    padding: 0;
+    display: list-item; /* Ensure it behaves as a list item */
+    color: #d1d8e0; /* Lighter text */
+}
+.experience li ul li::before {
+    content: none; /* Remove icon for inner list items */
+}
+
+
+/* File Section Styling */
+.file-section {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.file-section a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #60a3bc; /* Muted blue accent */
+    background: #34495e; /* Lighter blue-grey background */
+    border-radius: 2rem;
+    padding: 0.6rem 1.6rem;
+    border: 1px solid #60a3bc; /* Muted blue border */
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 8px #60a3bc22; /* Muted blue shadow */
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+.file-section a i {
+    margin-right: 0.7rem;
+    font-size: 1.7rem;
+}
+
+.file-section a:hover {
+    background: #60a3bc; /* Muted blue on hover */
+    color: #2c3e50; /* Dark blue-grey on hover */
+    box-shadow: 0 0 15px #60a3bc; /* Muted blue shadow on hover */
+}
+
+.file-section .btn-download {
+    background: linear-gradient(90deg, #34495e 60%, #60a3bc22 100%); /* Lighter blue-grey gradient with transparent accent */
+    color: #60a3bc; /* Muted blue accent */
+    border: 2px solid #60a3bc; /* Muted blue border */
+}
+
+.file-section .btn-download:hover {
+    background: #60a3bc; /* Muted blue on hover */
+    color: #2c3e50; /* Dark blue-grey on hover */
+    box-shadow: 0 0 15px #60a3bc; /* Muted blue shadow on hover */
+}
+
+
+/* Media Queries for common sections */
+@media (max-width: 1000px) {
+    .certification,
+    .events,
+    .education,
+    .services,
+    .experience,
+    .contact,
+    .hire-me,
+    .projects {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 600px) {
+    .certification,
+    .events,
+    .education,
+    .services,
+    .experience,
+    .contact,
+    .hire-me,
+    .projects {
+        padding: 1rem 2%;
+        margin: 2rem 0;
+    }
+    .certification h2,
+    .events h2,
+    .education h2,
+    .services h2,
+    .experience h2,
+    .contact h2,
+    .hire-me h2,
+    .projects h2 {
+        font-size: 2.2rem;
+    }
+    .certification li,
+    .events li,
+    .education li,
+    .experience li {
+        font-size: 1.4rem;
+        padding: 1rem 1.2rem;
+    }
+    .file-section a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+    .file-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* --- Advanced CSS for Skills Section --- */
+.skills {
+    background: linear-gradient(120deg, #2c3e50 60%, #34495e 100%); /* Darker blue-grey gradient */
+    border-radius: 2rem;
+    margin: 4rem 0;
+    padding: 3rem 9%;
+    box-shadow: 0 0 25px #60a3bc33; /* Muted blue shadow */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills h2 {
+    font-size: 3rem;
+    color: #60a3bc; /* Muted blue accent */
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px #60a3bc22; /* Muted blue shadow */
+    text-align: center;
+}
+
+.skills .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.skills .skill-category {
+    background: linear-gradient(90deg, #34495e 60%, #2c3e50 100%); /* Lighter blue-grey gradient */
+    border-radius: 1.5rem;
+    padding: 2rem;
+    flex: 1 1 250px;
+    box-shadow: 0 0 15px #60a3bc22; /* Muted blue shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills .skill-category:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px #60a3bc44; /* Muted blue shadow on hover */
+}
+
+.skills .skill-category h3 {
+    font-size: 2.2rem;
+    color: #d1d8e0; /* Lighter text */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #60a3bc55; /* Muted blue border */
+    padding-bottom: 0.8rem;
+}
+
+.skills .skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills .skill-category li {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #d1d8e0; /* Lighter text */
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.skills .skill-category li .fa-brands,
+.skills .skill-category li .fa-solid {
+    font-size: 2rem;
+    color: #60a3bc; /* Muted blue accent */
+    width: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .skills .skills-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* --- New CSS for Services Section --- */
+.services .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.services .service-item {
+    background: linear-gradient(90deg, #34495e 60%, #2c3e50 100%); /* Lighter blue-grey gradient */
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    flex: 1 1 300px;
+    box-shadow: 0 0 15px #60a3bc22; /* Muted blue shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.services .service-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px #60a3bc44; /* Muted blue shadow on hover */
+}
+
+.services .service-item i {
+    font-size: 4rem;
+    color: #60a3bc; /* Muted blue accent */
+    margin-bottom: 1.5rem;
+}
+
+.services .service-item h3 {
+    font-size: 2.5rem;
+    color: #d1d8e0; /* Lighter text */
+    margin-bottom: 1rem;
+}
+
+.services .service-item ul,
+.services .service-item p {
+    font-size: 1.6rem;
+    color: #d1d8e0; /* Lighter text */
+    text-align: left; /* Align text within service item */
+    padding-left: 1rem; /* Adjust for list items */
+}
+
+.services .service-item ul li {
+    background: none;
+    box-shadow: none;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    display: list-item; /* Override flex for list items */
+    position: relative;
+    padding-left: 20px;
+}
+
+.services .service-item ul li::before {
+    content: "\f00c"; /* Checkmark icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #60a3bc; /* Muted blue accent */
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    font-size: 1.4rem;
+}
+
+
+/* --- New CSS for Contact Section --- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    font-size: 1.8rem;
+    color: #d1d8e0; /* Lighter text */
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-info p i {
+    font-size: 2.5rem;
+    color: #60a3bc; /* Muted blue accent */
+}
+
+.contact-info p a {
+    color: #60a3bc; /* Muted blue accent */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info p a:hover {
+    color: #81ecec; /* Lighter blue accent on hover */
+}
+
+/* --- New CSS for Hire Me Form Section --- */
+.hire-me form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: linear-gradient(120deg, #34495e 60%, #2c3e50 100%); /* Lighter blue-grey gradient */
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px #60a3bc22; /* Muted blue shadow */
+}
+
+.hire-me form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.hire-me form label {
+    font-size: 1.6rem;
+    color: #d1d8e0; /* Lighter text */
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.hire-me form input[type="text"],
+.hire-me form input[type="email"],
+.hire-me form input[type="tel"],
+.hire-me form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    background: #2c3e50; /* Darker blue-grey background */
+    border: 1px solid #60a3bc55; /* Muted blue border with transparency */
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    color: #d1d8e0; /* Lighter text */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.hire-me form input[type="text"]:focus,
+.hire-me form input[type="email"]:focus,
+.hire-me form input[type="tel"]:focus,
+.hire-me form textarea:focus {
+    border-color: #60a3bc; /* Muted blue accent on focus */
+    box-shadow: 0 0 10px #60a3bc44; /* Muted blue shadow on focus */
+    outline: none;
+}
+
+.hire-me form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.hire-me form .btn {
+    width: fit-content;
+    margin-top: 1rem;
+    align-self: center; /* Center the button */
+}
+
+/* Adjust font size for placeholders */
+.hire-me form input::placeholder,
+.hire-me form textarea::placeholder {
+    color: #a4b0be; /* Soft grey-blue for placeholders */
+    font-size: 1.5rem;
+}
+
+/* Media query for smaller screens on form */
+@media (max-width: 768px) {
+    .hire-me form {
+        padding: 2rem;
+    }
+}
+/* Projects Section Styling */
+.projects .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.projects .project-card {
+    background: linear-gradient(90deg, #34495e 60%, #2c3e50 100%);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    flex: 1 1 300px;
+    box-shadow: 0 0 15px #60a3bc22;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.projects .project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px #60a3bc44;
+}
+
+.projects .project-card h3 {
+    font-size: 2.5rem;
+    color: #d1d8e0;
+    margin-bottom: 1rem;
+}
+
+.projects .project-card p {
+    font-size: 1.6rem;
+    color: #d1d8e0;
+    margin-bottom: 2rem;
+}
+
+.projects .project-card ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.projects .project-card ul li {
+    font-size: 1.5rem;
+    color: #d1d8e0;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.projects .project-card ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #60a3bc;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.projects .project-card .project-link {
+    background: #34495e;
+    color: #60a3bc;
+    border: 2px solid #60a3bc;
+    padding: 0.8rem 2rem;
+    margin: 0 0.5rem 1rem; /* Added margin-bottom here */
+    transition: all 0.3s ease;
+}
+
+.projects .project-card .project-link:hover {
+    background: #60a3bc;
+    color: #2c3e50;
+    box-shadow: 0 0 15px #60a3bc;
+}
+
+/* Style for the new project status button */
+.project-status-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 1rem; /* Space from other buttons */
+}
+
+/* Styles for "Incomplete" state */
+.project-status-btn[data-completed="false"] {
+    background: linear-gradient(90deg, #e74c3c 60%, #c0392b 100%); /* Red gradient */
+    color: white;
+    border: 2px solid #e74c3c;
+    box-shadow: 0 0 10px #e74c3c44;
+}
+
+.project-status-btn[data-completed="false"]:hover {
+    background: #c0392b; /* Darker red on hover */
+    box-shadow: 0 0 25px #e74c3c;
+}
+
+/* Styles for "Completed" state */
+.project-status-btn[data-completed="true"] {
+    background: linear-gradient(90deg, #27ae60 60%, #2ecc71 100%); /* Green gradient */
+    color: white;
+    border: 2px solid #27ae60;
+    box-shadow: 0 0 10px #27ae6044;
+}
+
+.project-status-btn[data-completed="true"]:hover {
+    background: #27ae60;
+    box-shadow: 0 0 25px #27ae60;
+}
