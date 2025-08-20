@@ -45,4 +45,4 @@ See `requirements.txt` for external dependencies.
 - Update colors, fonts, and layout in `style.css`.
 
 ## License
-This project is open-source. You can modify and use it freely.
+This project is not open-source. You can not modify and use it freely.
