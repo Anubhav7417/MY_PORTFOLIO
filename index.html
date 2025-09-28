@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anubhav Singh | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                        accent: '#06b6d4',
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        card: '#1e293b'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'bounce-soft': 'bounceSoft 2s ease-in-out infinite',
+                        'particle-float': 'particleFloat 20s linear infinite'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        fadeInDown: {
+                            '0%': { transform: 'translateY(-30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-30px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(30px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.8' }
+                        },
+                        bounceSoft: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        particleFloat: {
+                            '0%': { transform: 'translate(0, 0) rotate(0deg)', opacity: '0' },
+                            '10%': { opacity: '1' },
+                            '90%': { opacity: '1' },
+                            '100%': { transform: 'translate(var(--tx), var(--ty)) rotate(360deg)', opacity: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-dark text-light min-h-screen relative overflow-x-hidden">
     <!-- Animated Background -->
@@ -16,13 +81,16 @@
     <nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-sm z-50 border-b border-card">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold gradient-text">Anubhav</a>
+                <a href="#home" class="flex items-center">
+                    <!-- Logo Image Option - Replace 'logo.png' with your actual logo file -->
+                    <img src="logo.png" alt="Anubhav Singh Logo" class="h-10 w-10 rounded-full mr-2 logo-image">
+                    <span class="text-xl font-bold gradient-text">Anubhav</span>
+                </a>
                 
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#skills" class="nav-link">Skills</a>
                     <a href="#education" class="nav-link">Education</a>
-                    <a href="#certifications" class="nav-link">Certifications</a>
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#contact" class="nav-link">Contact</a>
@@ -35,19 +103,6 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu hidden md:hidden">
-        <div class="container mx-auto px-6 py-4">
-            <a href="#home" class="mobile-nav-link">Home</a>
-            <a href="#skills" class="mobile-nav-link">Skills</a>
-            <a href="#education" class="mobile-nav-link">Education</a>
-            <a href="#certifications" class="mobile-nav-link">Certifications</a>
-            <a href="#projects" class="mobile-nav-link">Projects</a>
-            <a href="#experience" class="mobile-nav-link">Experience</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-20 relative z-10">
         <div class="container mx-auto px-6 py-20">
@@ -56,50 +111,51 @@
                 <div class="space-y-8 animate-fade-in-up">
                     <div class="space-y-6">
                         <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-                            Hi, I'm <span class="gradient-text">Anubhav</span>
+                            Hi, I'm <span class="gradient-text">Anubhav Singh</span>
                         </h1>
                         <div class="text-2xl lg:text-3xl font-semibold text-secondary">
                             <div class="typewriter">Pre Final-year Engineering Student</div>
                         </div>
                         <p class="text-lg text-secondary leading-relaxed max-w-2xl">
-                            I'm a 3rd-year engineering student from Etawah, able to learn new things quickly and adapt easily to different situations, with a strong focus on learning and growing.
+                            I'm a Pre Final-year engineering student, able to learn new things quickly and adapt easily to different situations, with a strong focus on learning and growing.
                         </p>
                     </div>
 
                     <!-- Social Links -->
                     <div class="flex space-x-6">
-                        <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="social-icon">
+                        <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="social-link">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://github.com/Anubhav7417" target="_blank" class="social-icon">
+                        <a href="https://github.com/Anubhav7417" target="_blank" class="social-link">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://x.com/fav7659" target="_blank" class="social-icon">
+                        <a href="https://x.com/fav7659" target="_blank" class="social-link">
                             <i class="fab fa-x-twitter text-xl"></i>
                         </a>
-                        <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="social-icon">
+                        <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="social-link">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="btn-primary">
+                        <a href="#contact" class="cta-btn primary">
                             <i class="fas fa-paper-plane"></i>
                             Hire Me
                         </a>
-                        <a href="resume...pdf" target="_blank" class="btn-secondary">
+                        <a href="resume.pdf" target="_blank" class="cta-btn secondary">
                             <i class="fas fa-file-lines"></i>
                             View CV
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Content -->
+                <!-- Right Content - Profile Picture Option -->
                 <div class="relative animate-float">
-                    <div class="avatar-container">
-                        <div class="avatar-image">
-                            <img src="main3.png" alt="Anubhav" class="w-full h-full object-cover">
+                    <div class="w-80 h-80 mx-auto bg-gradient-to-br from-primary to-accent rounded-2xl p-1 profile-container">
+                        <!-- Profile Image Option - Replace 'profile.jpg' with your actual profile picture -->
+                        <div class="w-full h-full bg-dark rounded-2xl flex items-center justify-center profile-image-container">
+                            <img src="profile.jpg" alt="Anubhav Singh" class="w-full h-full object-cover rounded-2xl profile-image">
                         </div>
                     </div>
                 </div>
@@ -111,120 +167,120 @@
     <section id="skills" class="py-20 bg-card relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-heading">Skills & Technologies</h2>
-                <p class="section-subheading">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">
                     Technologies I've worked with and continue to master
                 </p>
             </div>
 
-            <div class="skills-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Programming Languages -->
-                <div class="skill-category animate-fade-in-up">
+                <div class="skill-card animate-fade-in-up">
                     <div class="skill-icon bg-primary/10 text-primary">
                         <i class="fas fa-code text-xl"></i>
                     </div>
-                    <h3 class="skill-category-title">Programming Languages</h3>
-                    <div class="skills-list">
+                    <h3 class="skill-title">Programming Languages</h3>
+                    <div class="space-y-3">
                         <div class="skill-item">
                             <span class="skill-name">Python</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-primary" data-width="90%"></div>
+                                <div class="skill-bar bg-primary" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">C Programming</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-primary" data-width="85%"></div>
+                                <div class="skill-bar bg-primary" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Java</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-primary" data-width="80%"></div>
+                                <div class="skill-bar bg-primary" style="width: 80%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">HTML/CSS</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-primary" data-width="95%"></div>
+                                <div class="skill-bar bg-primary" style="width: 95%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Databases -->
-                <div class="skill-category animate-fade-in-up" style="animation-delay: 0.1s">
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.1s">
                     <div class="skill-icon bg-accent/10 text-accent">
                         <i class="fas fa-database text-xl"></i>
                     </div>
-                    <h3 class="skill-category-title">Databases</h3>
-                    <div class="skills-list">
+                    <h3 class="skill-title">Databases</h3>
+                    <div class="space-y-3">
                         <div class="skill-item">
                             <span class="skill-name">MySQL</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-accent" data-width="88%"></div>
+                                <div class="skill-bar bg-accent" style="width: 88%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Oracle</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-accent" data-width="75%"></div>
+                                <div class="skill-bar bg-accent" style="width: 75%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Cybersecurity & OS -->
-                <div class="skill-category animate-fade-in-up" style="animation-delay: 0.2s">
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.2s">
                     <div class="skill-icon bg-success/10 text-success">
                         <i class="fas fa-shield-alt text-xl"></i>
                     </div>
-                    <h3 class="skill-category-title">Cybersecurity & OS</h3>
-                    <div class="skills-list">
+                    <h3 class="skill-title">Cybersecurity & OS</h3>
+                    <div class="space-y-3">
                         <div class="skill-item">
                             <span class="skill-name">Kali Linux</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-success" data-width="82%"></div>
+                                <div class="skill-bar bg-success" style="width: 82%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Linux</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-success" data-width="85%"></div>
+                                <div class="skill-bar bg-success" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Cybersecurity</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-success" data-width="78%"></div>
+                                <div class="skill-bar bg-success" style="width: 78%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Tools & Soft Skills -->
-                <div class="skill-category animate-fade-in-up" style="animation-delay: 0.3s">
+                <div class="skill-card animate-fade-in-up" style="animation-delay: 0.3s">
                     <div class="skill-icon bg-warning/10 text-warning">
                         <i class="fas fa-tools text-xl"></i>
                     </div>
-                    <h3 class="skill-category-title">Tools & Soft Skills</h3>
-                    <div class="skills-list">
+                    <h3 class="skill-title">Tools & Soft Skills</h3>
+                    <div class="space-y-3">
                         <div class="skill-item">
                             <span class="skill-name">Git</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-warning" data-width="90%"></div>
+                                <div class="skill-bar bg-warning" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Communication</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-warning" data-width="92%"></div>
+                                <div class="skill-bar bg-warning" style="width: 92%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Prompt Engineering</span>
                             <div class="skill-bar-container">
-                                <div class="skill-bar bg-warning" data-width="85%"></div>
+                                <div class="skill-bar bg-warning" style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
@@ -237,46 +293,52 @@
     <section id="education" class="py-20 bg-dark relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-heading">Education</h2>
-                <p class="section-subheading">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">
                     My academic journey and qualifications
                 </p>
             </div>
 
-            <div class="education-container">
+            <div class="max-w-4xl mx-auto space-y-8">
                 <!-- Education Item 1 -->
                 <div class="education-card animate-slide-in-left">
-                    <div class="education-content">
-                        <h3 class="education-title">Bachelor of Technology in Computer Science and Engineering</h3>
-                        <p class="education-institution">GLA University, Mathura</p>
-                        <p class="education-duration">Third Year Student | Expected Graduation: 2027</p>
-                    </div>
-                    <div class="education-icon bg-primary/10 text-primary">
-                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="education-title">Bachelor of Technology in Computer Science and Engineering</h3>
+                            <p class="education-institution">GLA University, Mathura</p>
+                            <p class="education-details">Third Year Student | Expected Graduation: 2027</p>
+                        </div>
+                        <div class="education-icon bg-primary/10 text-primary">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Education Item 2 -->
                 <div class="education-card animate-slide-in-right">
-                    <div class="education-content">
-                        <h3 class="education-title">Intermediate Degree (12th Grade)</h3>
-                        <p class="education-institution">Janta Vidhyalaya Inter Collage, Bakewar, Etawah</p>
-                        <p class="education-duration">Graduation: 2021 | Grade: 67%</p>
-                    </div>
-                    <div class="education-icon bg-accent/10 text-accent">
-                        <i class="fas fa-school text-2xl"></i>
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="education-title">Intermediate Degree (12th Grade)</h3>
+                            <p class="education-institution">Janta Vidhyalaya Inter Collage, Bakewar, Etawah</p>
+                            <p class="education-details">Graduation: 2021 | Grade: 67%</p>
+                        </div>
+                        <div class="education-icon bg-accent/10 text-accent">
+                            <i class="fas fa-school text-2xl"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Education Item 3 -->
                 <div class="education-card animate-slide-in-left">
-                    <div class="education-content">
-                        <h3 class="education-title">High School (10th Grade)</h3>
-                        <p class="education-institution">Saraswati Vidhya Mandir, Dibiyapur, Auraiya</p>
-                        <p class="education-duration">Graduation: 2023 | Grade: 86%</p>
-                    </div>
-                    <div class="education-icon bg-success/10 text-success">
-                        <i class="fas fa-book text-2xl"></i>
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="education-title">High School (10th Grade)</h3>
+                            <p class="education-institution">Saraswati Vidhya Mandir, Dibiyapur, Auraiya</p>
+                            <p class="education-details">Graduation: 2023 | Grade: 86%</p>
+                        </div>
+                        <div class="education-icon bg-success/10 text-success">
+                            <i class="fas fa-book text-2xl"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,16 +349,16 @@
     <section id="certifications" class="py-20 bg-card relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-heading">Certifications</h2>
-                <p class="section-subheading">
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">
                     Professional certifications and achievements
                 </p>
             </div>
 
-            <div class="certifications-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Certification 1 -->
                 <div class="certification-card animate-fade-in-up">
-                    <div class="certification-header">
+                    <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="certification-title">META FRONTEND DEVELOPER</h3>
                             <p class="certification-issuer">Meta, 2025</p>
@@ -313,7 +375,7 @@
 
                 <!-- Certification 2 -->
                 <div class="certification-card animate-fade-in-up" style="animation-delay: 0.1s">
-                    <div class="certification-header">
+                    <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="certification-title">MICROSOFT AZURE DEVELOPER</h3>
                             <p class="certification-issuer">Microsoft, 2025</p>
@@ -330,7 +392,7 @@
 
                 <!-- Certification 3 -->
                 <div class="certification-card animate-fade-in-up" style="animation-delay: 0.2s">
-                    <div class="certification-header">
+                    <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="certification-title">CYBERSECURITY ENGINEER</h3>
                             <p class="certification-issuer">Google, 2025</p>
@@ -347,7 +409,7 @@
 
                 <!-- Certification 4 -->
                 <div class="certification-card animate-fade-in-up" style="animation-delay: 0.3s">
-                    <div class="certification-header">
+                    <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="certification-title">AI/ML ENGINEER</h3>
                             <p class="certification-issuer">AI/ML (Microsoft), 2025</p>
@@ -365,9 +427,9 @@
 
             <!-- Google Drive Link -->
             <div class="text-center mt-12">
-                <a href="https://drive.google.com/drive/folders/your-folder-id" target="_blank" class="drive-link">
+                <a href="https://drive.google.com/drive/folders/1c9x8i49PSmxRaD_USLw-6-1x-JDHPY7u?role=reader" target="_blank" class="drive-link">
                     <i class="fab fa-google-drive"></i>
-                    View All Certifications on Google Drive
+                    View All Certifications on My Google Drive
                 </a>
             </div>
         </div>
@@ -377,13 +439,13 @@
     <section id="projects" class="py-20 bg-dark relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-heading">Projects</h2>
-                <p class="section-subheading">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">
                     Some of my recent work and personal projects
                 </p>
             </div>
 
-            <div class="projects-grid">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Project 1 -->
                 <div class="project-card animate-fade-in-up">
                     <h3 class="project-title">Hostel Management System</h3>
@@ -471,16 +533,16 @@
     <section id="experience" class="py-20 bg-card relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-heading">Experience</h2>
-                <p class="section-subheading">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">
                     My professional journey and internships
                 </p>
             </div>
 
-            <div class="experience-container">
+            <div class="max-w-4xl mx-auto space-y-8">
                 <!-- Experience 1 -->
                 <div class="experience-card animate-slide-in-left">
-                    <div class="experience-header">
+                    <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="experience-title">Python Programming Intern</h3>
                             <p class="experience-company">CodSoft</p>
@@ -492,11 +554,11 @@
                     </div>
                     <ul class="experience-description">
                         <li class="experience-item">
-                            <i class="fas fa-circle text-primary text-xs"></i>
+                            <i class="fas fa-circle text-primary text-xs mt-2"></i>
                             <span>Undertook Python programming tasks to enhance software functionality.</span>
                         </li>
                         <li class="experience-item">
-                            <i class="fas fa-circle text-primary text-xs"></i>
+                            <i class="fas fa-circle text-primary text-xs mt-2"></i>
                             <span>Applied problem-solving skills in a professional development environment.</span>
                         </li>
                     </ul>
@@ -504,7 +566,7 @@
 
                 <!-- Experience 2 -->
                 <div class="experience-card animate-slide-in-right">
-                    <div class="experience-header">
+                    <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="experience-title">Python Programming Intern</h3>
                             <p class="experience-company">InternPe</p>
@@ -516,11 +578,11 @@
                     </div>
                     <ul class="experience-description">
                         <li class="experience-item">
-                            <i class="fas fa-circle text-accent text-xs"></i>
+                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
                             <span>Gained practical experience in Python development and scripting.</span>
                         </li>
                         <li class="experience-item">
-                            <i class="fas fa-circle text-accent text-xs"></i>
+                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
                             <span>Collaborated on projects to implement new features and optimizations.</span>
                         </li>
                     </ul>
@@ -533,78 +595,78 @@
     <section id="contact" class="py-20 bg-dark relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-heading">Contact Me</h2>
-                <p class="section-subheading">
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">
                     Get in touch for collaborations or opportunities
                 </p>
             </div>
 
-            <div class="contact-grid">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Info -->
-                <div class="contact-info">
-                    <div class="contact-item">
+                <div class="space-y-6">
+                    <div class="contact-info-card">
                         <div class="contact-icon bg-primary/10 text-primary">
                             <i class="fas fa-envelope text-xl"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3 class="contact-type">Email</h3>
+                        <div>
+                            <h3 class="contact-method">Email</h3>
                             <a href="mailto:jonsnower07@gmail.com" class="contact-link">jonsnower07@gmail.com</a>
                         </div>
                     </div>
 
-                    <div class="contact-item">
+                    <div class="contact-info-card">
                         <div class="contact-icon bg-accent/10 text-accent">
                             <i class="fas fa-phone text-xl"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3 class="contact-type">Phone</h3>
+                        <div>
+                            <h3 class="contact-method">Phone</h3>
                             <a href="tel:+917217486817" class="contact-link">+91 7217486817</a>
                         </div>
                     </div>
 
-                    <div class="contact-item">
+                    <div class="contact-info-card">
                         <div class="contact-icon bg-warning/10 text-warning">
                             <i class="fab fa-x-twitter text-xl"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3 class="contact-type">X (Twitter)</h3>
+                        <div>
+                            <h3 class="contact-method">X (Twitter)</h3>
                             <a href="https://x.com/fav7659" target="_blank" class="contact-link">@fav7659</a>
                         </div>
                     </div>
 
-                    <div class="contact-item">
+                    <div class="contact-info-card">
                         <div class="contact-icon bg-success/10 text-success">
                             <i class="fab fa-instagram text-xl"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3 class="contact-type">Instagram</h3>
+                        <div>
+                            <h3 class="contact-method">Instagram</h3>
                             <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="contact-link">is_.eccedentesiast.bin</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <form action="https://formspree.io/f/mkgzekzr" method="POST" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
+                <div class="contact-form-card">
+                    <form action="https://formspree.io/f/mkgzekzr" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
                                 <label class="form-label">Name</label>
                                 <input type="text" name="name" required class="form-input" placeholder="Your Name">
                             </div>
-                            <div class="form-group">
+                            <div>
                                 <label class="form-label">Email</label>
                                 <input type="email" name="email" required class="form-input" placeholder="Your Email">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div>
                             <label class="form-label">Phone (Optional)</label>
                             <input type="tel" name="phone" class="form-input" placeholder="Your Phone Number">
                         </div>
-                        <div class="form-group">
+                        <div>
                             <label class="form-label">Purpose or Message</label>
                             <textarea name="message" required rows="5" class="form-textarea" placeholder="Purpose or Message"></textarea>
                         </div>
-                        <button type="submit" class="form-submit">
+                        <button type="submit" class="submit-btn">
                             Send Message
                         </button>
                     </form>
@@ -616,7 +678,7 @@
     <!-- Footer -->
     <footer class="py-8 bg-card border-t border-dark relative z-10">
         <div class="container mx-auto px-6 text-center">
-            <div class="social-links">
+            <div class="flex justify-center space-x-6 mb-4">
                 <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="footer-social-link">
                     <i class="fab fa-linkedin text-xl"></i>
                 </a>
