@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="width">
+    <meta name="theme-color" content="#000000">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
     <title>Anubhav | Portfolio</title>
@@ -13,27 +14,16 @@
     <!-- Animated Background Canvas -->
     <canvas id="particleCanvas"></canvas>
 
-    <!-- Screenshot Protection Overlay -->
-    <div class="screenshot-overlay" id="screenshotOverlay">
-        <div class="screenshot-message">
-            <h3>Portfolio Protection</h3>
-            <p>Please respect the work and effort put into this portfolio. Copying someone's work without permission is not ethical.</p>
-            <p>If you're interested in collaboration or have questions, feel free to contact me!</p>
-            <button class="close-overlay" id="closeOverlay">Close</button>
-        </div>
-    </div>
-
-    <!-- Security Warning -->
-    <div class="security-warning" id="securityWarning">
-        <i class="fas fa-shield-alt"></i>
-        <span>Security Protection Active</span>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon" id="themeIcon"></i>
     </div>
 
     <!-- Header -->
     <header class="hide-on-scroll">
-        <a class="logo" href="#"></a>
+        <a class="logo" href="#">A</a>
         <nav id="navbar">
-            <a class="active" href="#">Home</a>
+            <a class="active" href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
@@ -53,10 +43,18 @@
             <h3 class="typing-text">I'm a <span></span></h3>
             <p>I'm a Pre Final-year engineering student, able to learn new things quickly and adapt easily to different situations, with a strong focus on learning and growing.</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/Anubhav7417" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://x.com/fav7659?t=ILnNGuD9n1iBMmzVomi-cQ&s=09" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Anubhav7417" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://x.com/fav7659?t=ILnNGuD9n1iBMmzVomi-cQ&s=09" target="_blank" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
             <div class="home-btns">
                 <a class="btn" href="#hire-me">Hire me</a>
@@ -65,122 +63,132 @@
                 </a>
             </div>
         </div>
+        <!--<div class="home-img">
+            <img alt="Anubhav" src="main3.png" loading="lazy"/>
+        </div>-->
     </section>
 
     <!-- Certifications Section -->
     <section class="certification">
         <h2>Certifications</h2>
-        <ul>
-            <li>
-                <strong>META FRONTEND DEVELOPER</strong> – Meta, 2025
+        <div class="certification-grid">
+            <div class="certification-card">
+                <strong>META FRONTEND DEVELOPER</strong>
+                <p>Meta, 2025</p>
                 <div class="file-section">
                     <a href="Front End Developer.pdf" target="_blank">
                         <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
                 </div>
-            </li>
-            <li>
-                <strong>MICROSOFT AZURE DEVELOPER</strong> – Microsoft, 2025
+            </div>
+            <div class="certification-card">
+                <strong>MICROSOFT AZURE DEVELOPER</strong>
+                <p>Microsoft, 2025</p>
                 <div class="file-section">
                     <a href="Azure AI Essentials.pdf" target="_blank">
                         <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
                 </div>
-            </li>
-            <li>
-                <strong>CYBERSECURITY ENGINEER</strong> – Google, 2025
+            </div>
+            <div class="certification-card">
+                <strong>CYBERSECURITY ENGINEER</strong>
+                <p>Google, 2025</p>
                 <div class="file-section">
                     <a href="Cyber Security Professional.pdf" target="_blank">
                         <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
                 </div>
-            </li>
-            <li>
-                <strong>AI/ML ENGINEER</strong> – AI/ML (Microsoft), 2025
+            </div>
+            <div class="certification-card">
+                <strong>AI/ML ENGINEER</strong>
+                <p>AI/ML (Microsoft), 2025</p>
                 <div class="file-section">
                     <a href="AI & ML Engineering.pdf" target="_blank">
                         <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
-                    
                 </div>
-            </li>
-            <a class="drive-btn" href="https://drive.google.com/drive/folders/1c9x8i49PSmxRaD_USLw-6-1x-JDHPY7u?role=reader" target="_blank">
-            <i class="fa-brands fa-google-drive"></i> View All Certifications on Google Drive
+            </div>
+        </div>
+        <a class="drive-btn" href="https://drive.google.com/drive/folders/your-folder-id" target="_blank">
+            <i class="fa-brands fa-google-drive"></i> View All Certifications
         </a>
-        </ul>
     </section>
 
     <!-- Events Section -->
     <section class="events">
         <h2>Events</h2>
-        <ul>
-            <li>
-                <strong>PYTHON BOOTCAMP</strong> – Attendee, Let's Upgrade
-                <p>Thrilled to share that I've successfully completed the 3-Day Python Bootcamp by LetsUpgrade! 🎓💡. It was a short yet intensive journey—packed with insightful sessions, hands-on coding practice, and real-world problem-solving. Gained valuable Python programming skills that I'm excited to apply in future projects and opportunities. "Big thanks to Let's Upgrade for the engaging learning experience! 🚀"</p>
-                <p>Certificate Issued on: May 24, 2025</p>
+        <div class="events-grid">
+            <div class="event-card">
+                <strong>PYTHON BOOTCAMP</strong>
+                <p class="event-org">Attendee, Let's Upgrade</p>
+                <p class="event-desc">Thrilled to share that I've successfully completed the 3-Day Python Bootcamp by LetsUpgrade! 🎓💡. It was a short yet intensive journey—packed with insightful sessions, hands-on coding practice, and real-world problem-solving.</p>
+                <p class="event-date">Certificate Issued on: May 24, 2025</p>
                 <div class="file-section">
                     <a href="python workshop.pdf" target="_blank">
                         <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
                 </div>
-            </li>
-            <li>
-                <strong>DATA SCIENCE WORKSHOP</strong> –  Attendee, AppSquadz CodeSquadz
-                <p>This is a certificate of participation for an active and significant role in a one-day workshop on Data Science: Transforming Insight into Real world Impact. The event took that took place on January 31, 2025, at GLA University Mathura.</p>
+            </div>
+            <div class="event-card">
+                <strong>DATA SCIENCE WORKSHOP</strong>
+                <p class="event-org">Attendee, AppSquadz CodeSquadz</p>
+                <p class="event-desc">This is a certificate of participation for an active and significant role in a one-day workshop on Data Science: Transforming Insight into Real world Impact.</p>
+                <p class="event-date">January 31, 2025</p>
                 <div class="file-section">
                     <a href="data science workshop.pdf" target="_blank">
-                        <i class="fa-solid fa-file-pdf"></i> View File
+                        <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
                 </div>
-            </li>
-            <li>
-                <strong>LSRW English Workshop</strong> – Attendee, Department of English
-                <p>This is a certificate of appreciation. More details are needed to provide a full description.</p>
+            </div>
+            <div class="event-card">
+                <strong>LSRW English Workshop</strong>
+                <p class="event-org">Attendee, Department of English</p>
+                <p class="event-desc">This is a certificate of appreciation for participation in the English workshop.</p>
                 <div class="file-section">
                     <a href="LSRW English Workshop.pdf" target="_blank">
-                        <i class="fa-solid fa-file-pdf"></i> View File
+                        <i class="fa-solid fa-file-pdf"></i> View Certificate
                     </a>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <h2>Skills</h2>
-        <div class="skills-container">
+        <div class="skills-grid">
             <div class="skill-category">
                 <h3>Programming Languages</h3>
-                <ul>
-                    <li><i class="fa-brands fa-python"></i> Python</li>
-                    <li><i class="fa-solid fa-c"></i> C Programming</li>
-                    <li><i class="fa-brands fa-java"></i> Java</li>
-                    <li><i class="fa-brands fa-html5"></i> HTML</li>
-                    <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-                </ul>
+                <div class="skills-list">
+                    <span class="skill-item"><i class="fa-brands fa-python"></i> Python</span>
+                    <span class="skill-item"><i class="fa-solid fa-c"></i> C Programming</span>
+                    <span class="skill-item"><i class="fa-brands fa-java"></i> Java</span>
+                    <span class="skill-item"><i class="fa-brands fa-html5"></i> HTML</span>
+                    <span class="skill-item"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                </div>
             </div>
             <div class="skill-category">
                 <h3>Databases</h3>
-                <ul>
-                    <li><i class="fa-solid fa-database"></i> MySQL</li>
-                    <li><i class="fa-solid fa-server"></i> Oracle</li>
-                </ul>
+                <div class="skills-list">
+                    <span class="skill-item"><i class="fa-solid fa-database"></i> MySQL</span>
+                    <span class="skill-item"><i class="fa-solid fa-server"></i> Oracle</span>
+                </div>
             </div>
             <div class="skill-category">
                 <h3>Cybersecurity & OS</h3>
-                <ul>
-                    <li><i class="fa-brands fa-linux"></i> Kali Linux</li>
-                    <li><i class="fa-brands fa-linux"></i> Linux</li>
-                    <li><i class="fa-solid fa-shield-halved"></i> Cybersecurity</li>
-                </ul>
+                <div class="skills-list">
+                    <span class="skill-item"><i class="fa-brands fa-linux"></i> Kali Linux</span>
+                    <span class="skill-item"><i class="fa-brands fa-linux"></i> Linux</span>
+                    <span class="skill-item"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</span>
+                </div>
             </div>
             <div class="skill-category">
                 <h3>Tools & Soft Skills</h3>
-                <ul>
-                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
-                    <li><i class="fa-solid fa-comments"></i> Communication</li>
-                    <li><i class="fa-solid fa-lightbulb"></i> Prompt Engineering</li>
-                </ul>
+                <div class="skills-list">
+                    <span class="skill-item"><i class="fa-brands fa-git-alt"></i> Git</span>
+                    <span class="skill-item"><i class="fa-solid fa-comments"></i> Communication</span>
+                    <span class="skill-item"><i class="fa-solid fa-lightbulb"></i> Prompt Engineering</span>
+                </div>
             </div>
         </div>
     </section>
@@ -188,82 +196,82 @@
     <!-- Education Section -->
     <section class="education" id="education">
         <h2>Education</h2>
-        <ul>
-            <li>
+        <div class="education-grid">
+            <div class="education-card">
                 <strong>Bachelor of Technology in Computer Science and Engineering</strong>
-                <p>GLA University, Mathura</p>
-                <p>Third Year Student | Expected Graduation: 2027</p>
-            </li>
-            <li>
+                <p class="institution">GLA University, Mathura</p>
+                <p class="duration">Third Year Student | Expected Graduation: 2027</p>
+            </div>
+            <div class="education-card">
                 <strong>Intermediate Degree (12th Grade)</strong>
-                <p>Janta Vidhyalaya Inter Collage, Bakewar, Etawah</p>
-                <p>Graduation: 2021 | Grade: 67%</p>
-            </li>
-            <li>
+                <p class="institution">Janta Vidhyalaya Inter Collage, Bakewar, Etawah</p>
+                <p class="duration">Graduation: 2021 | Grade: 67%</p>
+            </div>
+            <div class="education-card">
                 <strong>High School (10th Grade)</strong>
-                <p>Saraswati Vidhya Mandir, Dibiyapur, Auraiya</p>
-                <p>Graduation: 2023 | Grade: 86%</p>
-            </li>
-        </ul>
+                <p class="institution">Saraswati Vidhya Mandir, Dibiyapur, Auraiya</p>
+                <p class="duration">Graduation: 2023 | Grade: 86%</p>
+            </div>
+        </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <h2>My Services</h2>
-        <div class="services-container">
-            <div class="service-item">
+        <div class="services-grid">
+            <div class="service-card">
                 <i class="fa-solid fa-code"></i>
                 <h3>Frontend Development</h3>
                 <ul>
-                    <li>Built and improved web pages using HTML, CSS, and JavaScript to make them look good and work smoothly.</li>
-                    <li>Worked with designers and other developers to add new features and fix issues.</li>
-                    <li>Made sure websites worked well on different devices and loaded faster.</li>
+                    <li>Built and improved web pages using HTML, CSS, and JavaScript</li>
+                    <li>Worked with designers and other developers to add new features</li>
+                    <li>Made sure websites worked well on different devices</li>
                 </ul>
             </div>
-            <!-- Commented out AI/ML Engineering service as requested -->
-            <!--
-            <div class="service-item">
-                <i class="fa-solid fa-brain"></i>
-                <h3>AI/ML Engineering</h3>
-                <p>This service involves creating and using artificial intelligence and machine learning models to analyze data, make predictions, and automate tasks, helping improve decision-making and efficiency.</p>
-            </div>
-            -->
         </div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <h2>My Projects</h2>
-        <div class="projects-container">
+        <div class="projects-grid">
             <div class="project-card">
-                <div class="project-details">
-                    <h3>Hostel Management System</h3>
-                    <p>This is a simple website to help manage hostel work for students and wardens. It can be used to keep student details, ask for leave, and check mess payments.</p>
-                    <ul>
-                        <li>Separate pages for wardens and students</li>
-                        <li>Students can apply for leave and wardens can approve</li>
-                        <li>Mess payment record keeping</li>
-                        <li>Works on both phone and computer</li>
-                    </ul>
-                    <p><strong>Technologies Used:</strong> HTML, CSS</p>
-                    <a class="btn project-link" href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
-                    <a class="btn project-link" href="https://hostel-management-system-pearl.vercel.app/" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                <h3>Hostel Management System</h3>
+                <p>This is a simple website to help manage hostel work for students and wardens. It can be used to keep student details, ask for leave, and check mess payments.</p>
+                <ul>
+                    <li>Separate pages for wardens and students</li>
+                    <li>Students can apply for leave and wardens can approve</li>
+                    <li>Mess payment record keeping</li>
+                    <li>Works on both phone and computer</li>
+                </ul>
+                <p><strong>Technologies Used:</strong> HTML, CSS</p>
+                <div class="project-links">
+                    <a class="btn project-link" href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank">
+                        <i class="fa-brands fa-github"></i> Source Code
+                    </a>
+                    <a class="btn project-link" href="https://hostel-management-system-pearl.vercel.app/" target="_blank">
+                        <i class="fa-solid fa-globe"></i> Live Demo
+                    </a>
                     <button class="btn project-status-btn" data-completed="false">Held</button>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-details">
-                    <h3>Smart Calculator</h3>
-                    <p>This is a calculator that can do normal math, tell your age, and change money from one currency to another.</p>
-                    <ul>
-                        <li>Do normal maths like add, subtract, multiply, and divide</li>
-                        <li>Find age from date of birth</li>
-                        <li>Change money between different countries</li>
-                        <li>Easy to use and works on phone or computer</li>
-                    </ul>
-                    <p><strong>Technologies Used:</strong> HTML, CSS</p>
-                    <a class="btn project-link" href="https://github.com/Anubhav7417/smart-calculator" target="_blank"><i class="fa-brands fa-github"></i> Source Code</a>
-                    <a class="btn project-link" href="https://smart-calculator-a6xr.onrender.com" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                <h3>Smart Calculator</h3>
+                <p>This is a calculator that can do normal math, tell your age, and change money from one currency to another.</p>
+                <ul>
+                    <li>Do normal maths like add, subtract, multiply, and divide</li>
+                    <li>Find age from date of birth</li>
+                    <li>Change money between different countries</li>
+                    <li>Easy to use and works on phone or computer</li>
+                </ul>
+                <p><strong>Technologies Used:</strong> HTML, CSS</p>
+                <div class="project-links">
+                    <a class="btn project-link" href="https://github.com/Anubhav7417/smart-calculator" target="_blank">
+                        <i class="fa-brands fa-github"></i> Source Code
+                    </a>
+                    <a class="btn project-link" href="https://smart-calculator-a6xr.onrender.com" target="_blank">
+                        <i class="fa-solid fa-globe"></i> Live Demo
+                    </a>
                     <button class="btn project-status-btn" data-completed="true">Completed</button>
                 </div>
             </div>
@@ -273,41 +281,67 @@
     <!-- Experience Section -->
     <section class="experience" id="experience">
         <h2>Experience</h2>
-        <ul>
-            <li>
-                <strong>Python Programming Intern</strong> – CodSoft
-                <p>Nov 2024 - Dec 2024</p>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <strong>Python Programming Intern</strong>
+                <p class="company">CodSoft</p>
+                <p class="duration">Nov 2024 - Dec 2024</p>
                 <ul>
-                    <li>Undertook Python programming tasks to enhance software functionality.</li>
-                    <li>Applied problem-solving skills in a professional development environment.</li>
+                    <li>Undertook Python programming tasks to enhance software functionality</li>
+                    <li>Applied problem-solving skills in a professional development environment</li>
                 </ul>
-            </li>
-            <li>
-                <strong>Python Programming Intern</strong> – InternPe
-                <p>Nov 2024 - Dec 2024</p>
+            </div>
+            <div class="experience-card">
+                <strong>Python Programming Intern</strong>
+                <p class="company">InternPe</p>
+                <p class="duration">Nov 2024 - Dec 2024</p>
                 <ul>
-                    <li>Gained practical experience in Python development and scripting.</li>
-                    <li>Collaborated on projects to implement new features and optimizations.</li>
+                    <li>Gained practical experience in Python development and scripting</li>
+                    <li>Collaborated on projects to implement new features and optimizations</li>
                 </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Me</h2>
-        <div class="contact-info">
-            <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:jonsnower07@gmail.com">jonsnower07@gmail.com</a></p>
-            <p><i class="fa-solid fa-phone"></i> Phone: <a href="tel:+917217486817">+91 7217486817</a></p>
-            <p><i class="fa-brands fa-x-twitter"></i> X: <a href="https://x.com/fav7659?t=ILnNGuD9n1iBMmzVomi-cQ&s=09" target="_blank">@fav7659</a></p>
-            <p><i class="fa-brands fa-instagram"></i> Instagram: <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank">is_.eccedentesiast.bin</a></p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <a href="mailto:jonsnower07@gmail.com">jonsnower07@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <h3>Phone</h3>
+                    <a href="tel:+917217486817">+91 7217486817</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-x-twitter"></i>
+                <div>
+                    <h3>X (Twitter)</h3>
+                    <a href="https://x.com/fav7659" target="_blank">@fav7659</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-instagram"></i>
+                <div>
+                    <h3>Instagram</h3>
+                    <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank">is_.eccedentesiast.bin</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Hire Me Section -->
     <section class="hire-me" id="hire-me">
         <h2>Hire Me</h2>
-        <form action="https://formspree.io/f/mkgzekzr" method="POST">
+        <form action="https://formspree.io/f/mkgzekzr" method="POST" class="contact-form">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input id="name" name="name" placeholder="Your Name" required type="text"/>
@@ -324,91 +358,114 @@
                 <label for="message">Purpose or Message:</label>
                 <textarea id="message" name="message" placeholder="Purpose or Message" required></textarea>
             </div>
-            <button class="btn" type="submit">Send</button>
+            <button class="btn submit-btn" type="submit">Send Message</button>
         </form>
     </section>
 
     <script>
-        // Advanced Security Features
-        let securityBreachAttempts = 0;
-        const maxAttempts = 3;
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
 
-        // Enhanced security event listeners
-        function initializeSecurity() {
-            // Prevent right-click
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                securityBreachAttempts++;
-                showSecurityAlert('Right-click disabled');
-                if (securityBreachAttempts >= maxAttempts) {
-                    showSecurityAlert('Multiple security violations detected');
-                }
-            });
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
 
-            // Prevent text selection
-            document.addEventListener('selectstart', function(e) {
-                e.preventDefault();
-                securityBreachAttempts++;
-                showSecurityAlert('Text selection disabled');
-            });
-
-            // Prevent drag and drop
-            document.addEventListener('dragstart', function(e) {
-                e.preventDefault();
-            });
-
-            // Prevent keyboard shortcuts for dev tools
-            document.addEventListener('keydown', function(e) {
-                // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-                if (e.key === 'F12' || 
-                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-                    (e.ctrlKey && e.key === 'u')) {
-                    e.preventDefault();
-                    securityBreachAttempts++;
-                    showSecurityAlert('Developer tools access restricted');
-                    if (securityBreachAttempts >= maxAttempts) {
-                        document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#000;color:#fff;font-size:24px;">Security Violation Detected</div>';
-                    }
-                }
-
-                // Print Screen key
-                if (e.key === 'PrintScreen') {
-                    e.preventDefault();
-                    document.getElementById('screenshotOverlay').classList.add('active');
-                }
-            });
-
-            // Detect dev tools opening
-            let devToolsOpen = false;
-            setInterval(function() {
-                const widthThreshold = window.outerWidth - window.innerWidth > 160;
-                const heightThreshold = window.outerHeight - window.innerHeight > 160;
-                
-                if ((widthThreshold || heightThreshold) && !devToolsOpen) {
-                    devToolsOpen = true;
-                    securityBreachAttempts++;
-                    showSecurityAlert('Developer tools detected');
-                }
-            }, 1000);
-        }
-
-        // Security alert function
-        function showSecurityAlert(message) {
-            const warning = document.getElementById('securityWarning');
-            warning.querySelector('span').textContent = message;
-            warning.classList.add('active');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            setTimeout(() => {
-                warning.classList.remove('active');
-            }, 3000);
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Header Scroll Effect
+        const header = document.querySelector('.hide-on-scroll');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Typing Effect
+        const typingText = document.querySelector('.typing-text span');
+        const phrases = ['Web Developer', 'AI/ML Enthusiast', 'Cybersecurity Student'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+
+        // Project Status Toggle
+        document.querySelectorAll('.project-status-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const isCompleted = button.dataset.completed === 'true';
+                button.dataset.completed = (!isCompleted).toString();
+                button.textContent = isCompleted ? 'Held' : 'Completed';
+                button.style.background = isCompleted ? 'var(--accent-color)' : 'var(--success-color)';
+            });
+        });
 
         // Particle Background
         function initParticles() {
             const canvas = document.getElementById('particleCanvas');
             const ctx = canvas.getContext('2d');
             
-            // Set canvas size
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -417,7 +474,6 @@
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
             
-            // Particle class
             class Particle {
                 constructor() {
                     this.x = Math.random() * canvas.width;
@@ -425,7 +481,6 @@
                     this.size = Math.random() * 2 + 1;
                     this.speedX = Math.random() * 1 - 0.5;
                     this.speedY = Math.random() * 1 - 0.5;
-                    this.color = `rgba(0, 255, 0, ${Math.random() * 0.5})`;
                 }
                 
                 update() {
@@ -439,45 +494,27 @@
                 }
                 
                 draw() {
-                    ctx.fillStyle = this.color;
+                    ctx.fillStyle = 'var(--particle-color)';
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fill();
                 }
             }
             
-            // Create particles
             const particles = [];
-            const particleCount = Math.min(100, Math.floor(window.innerWidth / 10));
+            const particleCount = Math.min(80, Math.floor(window.innerWidth / 15));
             
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
             }
             
-            // Animation loop
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
-                    
-                    // Connect particles
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 100) {
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(0, 255, 0, ${0.1 * (1 - distance / 100)})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
                 
                 requestAnimationFrame(animate);
             }
@@ -485,98 +522,25 @@
             animate();
         }
 
-        // Optimized header scroll
-        const header = document.querySelector('.hide-on-scroll');
-        let lastScroll = 0;
-        let ticking = false;
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const current = window.scrollY;
-                    if (current > lastScroll && current > 50) {
-                        header.style.transform = 'translateY(-100%)';
-                    } else {
-                        header.style.transform = 'translateY(0)';
-                    }
-                    lastScroll = current;
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-
-        // Project Status Button functionality
-        document.querySelectorAll('.project-status-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const isCompleted = button.dataset.completed === 'true';
-                button.dataset.completed = (!isCompleted).toString();
-                button.textContent = isCompleted ? 'Held' : 'Completed';
-            });
-        });
-
-        // Close overlay
-        document.getElementById('closeOverlay').addEventListener('click', function() {
-            document.getElementById('screenshotOverlay').classList.remove('active');
-        });
-
-        // Typing effect
-        const typingText = document.querySelector('.typing-text span');
-        const phrases = ['Frontend Developer', 'Content Writer', 'Pre Final Year Student'];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            
-            if (isDeleting) {
-                // Remove character
-                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                // Add character
-                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            // Set typing speed
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            // If word is complete
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 1000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500; // Pause before start
-            }
-            
-            setTimeout(type, typeSpeed);
-        }
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navbar = document.getElementById('navbar');
-
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeSecurity();
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
             initParticles();
             setTimeout(type, 1000);
         });
 
-        // Fallback for older browsers
-        if (!window.requestAnimationFrame) {
-            window.requestAnimationFrame = function(callback) {
-                return setTimeout(callback, 1000 / 60);
-            };
-        }
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
