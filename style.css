@@ -1,121 +1,464 @@
-/* Tailwind Config - Remove JS config from CSS file */
-
-/* Base Styles */
-html {
-    scroll-behavior: smooth;
+/* Security Features - Hidden from view */
+#security-monitor,
+#security-canvas {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+/* Security fingerprint styles */
+.security-fingerprint {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0.001;
+    z-index: -9999;
+    pointer-events: none;
 }
 
-::-webkit-scrollbar-track {
-    background: #0f172a;
+/* Anti-bot detection */
+.anti-bot-trap {
+    display: none !important;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #2563eb;
-    border-radius: 4px;
+/* Honeypot field styles */
+.honeypot-field {
+    position: absolute !important;
+    left: -9999px !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #1d4ed8;
+/* Security monitoring elements */
+.security-beacon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    z-index: -9999;
 }
 
-/* Gradient text */
-.gradient-text {
-    background: linear-gradient(135deg, #2563eb, #06b6d4);
+/* Integrity check element */
+.integrity-check {
+    display: none;
+    visibility: hidden;
+}
+
+/* Tamper detection */
+.tamper-detection {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    z-index: -9999;
+}
+
+/* Security overlay protection */
+.security-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2147483647;
+    pointer-events: none;
+    opacity: 0;
+    background: transparent;
+}
+
+/* Bot behavior detection */
+.bot-detection {
+    display: none !important;
+}
+
+/* Security challenge element */
+.security-challenge {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Protection against automated tools */
+.automation-protection {
+    display: none;
+    visibility: hidden;
+}
+
+/* Security watermark */
+.security-watermark {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 0;
+    color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Anti-scraping protection */
+.anti-scraping {
+    display: none !important;
+}
+
+/* Security token */
+.security-token {
+    display: none;
+    visibility: hidden;
+}
+
+/* Protection layer */
+.protection-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Security monitoring */
+.security-monitor {
+    display: none !important;
+}
+
+/* Integrity verification */
+.integrity-verification {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* Anti-tampering */
+.anti-tampering {
+    display: none;
+}
+
+/* Security validation */
+.security-validation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -9999;
+}
+
+/* Bot protection */
+.bot-protection {
+    display: none !important;
+}
+
+/* Security checks */
+.security-check {
+    display: none;
+    visibility: hidden;
+}
+
+/* Protection against malicious scripts */
+.malicious-script-protection {
+    display: none;
+}
+
+/* Security barrier */
+.security-barrier {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2147483646;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Content protection */
+.content-protection {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Right-click protection */
+.right-click-protection {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2147483645;
+    pointer-events: none;
+}
+
+/* Developer tools detection */
+.dev-tools-detection {
+    display: none;
+}
+
+/* Security metrics */
+.security-metrics {
+    display: none !important;
+}
+
+/* Protection system */
+.protection-system {
+    display: none;
+}
+
+/* Security overlay */
+.security-overlay-active {
+    display: none;
+}
+
+/* Anti-debugging */
+.anti-debugging {
+    display: none;
+}
+
+/* Code protection */
+.code-protection {
+    display: none;
+}
+
+/* Security shield */
+.security-shield {
+    display: none;
+}
+
+/* Protection against inspection */
+.inspection-protection {
+    display: none;
+}
+
+/* Security wrapper */
+.security-wrapper {
+    display: contents;
+}
+
+/* Tamper-proof */
+.tamper-proof {
+    display: none;
+}
+
+/* Security envelope */
+.security-envelope {
+    display: none;
+}
+
+/* Protection mechanism */
+.protection-mechanism {
+    display: none;
+}
+
+/* Security guard */
+.security-guard {
+    display: none;
+}
+
+/* Content security */
+.content-security {
+    display: none;
+}
+
+/* Protection barrier */
+.protection-barrier {
+    display: none;
+}
+
+/* Security fence */
+.security-fence {
+    display: none;
+}
+
+/* Anti-exploit */
+.anti-exploit {
+    display: none;
+}
+
+/* Security watch */
+.security-watch {
+    display: none;
+}
+
+/* Protection watch */
+.protection-watch {
+    display: none;
+}
+
+/* Security sentinel */
+.security-sentinel {
+    display: none;
+}
+
+/* Protection sentinel */
+.protection-sentinel {
+    display: none;
+}
+
+/* Security guardian */
+.security-guardian {
+    display: none;
+}
+
+/* Protection guardian */
+.protection-guardian {
+    display: none;
+}
+
+/* Security keeper */
+.security-keeper {
+    display: none;
+}
+
+/* Protection keeper */
+.protection-keeper {
+    display: none;
+}
+
+/* Security warden */
+.security-warden {
+    display: none;
+}
+
+/* Protection warden */
+.protection-warden {
+    display: none;
+}
+
+/* Additional Portfolio Styles */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* Card hover effects */
-.card-hover {
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline {
+    border: 2px solid #667eea;
+    color: #667eea;
+    background: transparent;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
-.card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Skill bar styles */
-.skill-item {
-    display: flex;
-    align-items: center;
-    justify-content: between;
-}
-
-.skill-bar-container {
-    width: 5rem;
-    height: 0.5rem;
-    background-color: #1e293b;
-    border-radius: 9999px;
-    margin-left: 1rem;
-}
-
-.skill-bar {
-    height: 100%;
-    border-radius: 9999px;
-    transition: width 2s ease-in-out;
-    width: 0%;
-}
-
-/* Profile image styling */
-.profile-img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #2563eb;
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-}
-
-/* Grid background */
-.grid-bg {
-    background-image: 
-        linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-}
-
-/* Mobile menu */
-.mobile-menu {
-    display: none;
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-/* Form styles */
-.form-input:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 1px #2563eb;
-}
-
-/* Loading states */
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-/* Success message */
-.success-message {
-    background-color: #10b981;
+.btn-outline:hover {
+    background: #667eea;
     color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+    transform: translateY(-2px);
 }
 
-/* Error message */
-.error-message {
-    background-color: #ef4444;
-    color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
+/* Custom animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-soft {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounce-soft {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 0 15px;
+    }
+    
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    .btn-primary,
+    .btn-outline {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .portfolio-container {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+}
+
+/* Print styles */
+@media print {
+    .security-features,
+    .btn-primary,
+    .btn-outline {
+        display: none !important;
+    }
 }
