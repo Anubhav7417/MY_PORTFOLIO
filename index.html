@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -85,6 +86,10 @@
             background: #0f172a;
         }
 
+        .dark ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
         ::-webkit-scrollbar-thumb {
             background: #2563eb;
             border-radius: 4px;
@@ -110,6 +115,10 @@
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         /* Skill bar animation */
@@ -150,15 +159,27 @@
                 linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
         }
+
+        .grid-bg-light {
+            background-image: 
+                linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
     </style>
 </head>
-<body class="bg-dark text-light min-h-screen relative overflow-x-hidden">
+<body class="bg-dark text-light min-h-screen relative overflow-x-hidden dark:bg-light dark:text-dark">
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="fixed top-24 right-6 z-50 p-3 bg-card dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+        <i class="fas fa-moon text-yellow-400 dark:text-gray-600"></i>
+    </button>
+
     <!-- Animated Background -->
-    <div class="fixed inset-0 z-0 grid-bg"></div>
+    <div class="fixed inset-0 z-0 grid-bg dark:grid-bg-light"></div>
     <div id="particles-container" class="fixed inset-0 z-0"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-sm z-50 border-b border-card">
+    <nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-sm z-50 border-b border-card dark:bg-light/90 dark:border-gray-200">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" class="flex items-center">
@@ -167,15 +188,15 @@
                 </a>
                 
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">Home</a>
-                    <a href="#skills" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">Skills</a>
-                    <a href="#education" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">Education</a>
-                    <a href="#projects" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">Projects</a>
-                    <a href="#experience" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">Experience</a>
-                    <a href="#contact" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+                    <a href="#home" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Home</a>
+                    <a href="#skills" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Skills</a>
+                    <a href="#education" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Education</a>
+                    <a href="#projects" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Projects</a>
+                    <a href="#experience" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Experience</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Contact</a>
                 </div>
 
-                <button class="md:hidden text-secondary">
+                <button class="md:hidden text-secondary dark:text-gray-600">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
@@ -192,26 +213,26 @@
                         <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
                             Hi, I'm <span class="gradient-text">Anubhav Singh</span>
                         </h1>
-                        <div class="text-2xl lg:text-3xl font-semibold text-secondary">
+                        <div class="text-2xl lg:text-3xl font-semibold text-secondary dark:text-gray-600">
                             <div class="typewriter">Pre Final-year Eng Student</div>
                         </div>
-                        <p class="text-lg text-secondary leading-relaxed max-w-2xl">
+                        <p class="text-lg text-secondary leading-relaxed max-w-2xl dark:text-gray-600">
                           able to learn new things quickly and adapt easily to different situations, with a strong focus on learning and growing.
                         </p>
                     </div>
 
                     <!-- Social Links -->
                     <div class="flex space-x-6">
-                        <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                        <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300 dark:bg-gray-200 dark:text-gray-600 dark:hover:text-primary">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://github.com/Anubhav7417" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                        <a href="https://github.com/Anubhav7417" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300 dark:bg-gray-200 dark:text-gray-600 dark:hover:text-primary">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://x.com/fav7659" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                        <a href="https://x.com/fav7659" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300 dark:bg-gray-200 dark:text-gray-600 dark:hover:text-primary">
                             <i class="fab fa-x-twitter text-xl"></i>
                         </a>
-                        <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                        <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="w-12 h-12 bg-card rounded-full flex items-center justify-center text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-300 dark:bg-gray-200 dark:text-gray-600 dark:hover:text-primary">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
@@ -236,44 +257,44 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-card relative z-10">
+    <section id="skills" class="py-20 bg-card relative z-10 dark:bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Skills & Technologies</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
                     Technologies I've worked with and continue to master
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Programming Languages -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
                     <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-code text-primary text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
+                    <h3 class="text-xl font-semibold mb-4 dark:text-dark">Programming Languages</h3>
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Python</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Python</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-primary rounded-full skill-bar" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">C Programming</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">C Programming</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-primary rounded-full skill-bar" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Java</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Java</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-primary rounded-full skill-bar" style="width: 80%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">HTML/CSS</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">HTML/CSS</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-primary rounded-full skill-bar" style="width: 95%"></div>
                             </div>
                         </div>
@@ -281,21 +302,21 @@
                 </div>
 
                 <!-- Databases -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.1s">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.1s">
                     <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-database text-accent text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">Databases</h3>
+                    <h3 class="text-xl font-semibold mb-4 dark:text-dark">Databases</h3>
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">MySQL</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">MySQL</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-accent rounded-full skill-bar" style="width: 88%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Oracle</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Oracle</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-accent rounded-full skill-bar" style="width: 75%"></div>
                             </div>
                         </div>
@@ -303,27 +324,27 @@
                 </div>
 
                 <!-- Cybersecurity & OS -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.2s">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.2s">
                     <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-shield-alt text-success text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">Cybersecurity & OS</h3>
+                    <h3 class="text-xl font-semibold mb-4 dark:text-dark">Cybersecurity & OS</h3>
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Kali Linux</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Kali Linux</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-success rounded-full skill-bar" style="width: 82%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Linux</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Linux</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-success rounded-full skill-bar" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Cybersecurity</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Cybersecurity</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-success rounded-full skill-bar" style="width: 78%"></div>
                             </div>
                         </div>
@@ -331,27 +352,27 @@
                 </div>
 
                 <!-- Tools & Soft Skills -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.3s">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.3s">
                     <div class="w-12 h-12 bg-warning/10 rounded-xl flex items-center justify-center mb-4">
                         <i class="fas fa-tools text-warning text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4">Tools & Soft Skills</h3>
+                    <h3 class="text-xl font-semibold mb-4 dark:text-dark">Tools & Soft Skills</h3>
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Git</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Git</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-warning rounded-full skill-bar" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Communication</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Communication</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-warning rounded-full skill-bar" style="width: 92%"></div>
                             </div>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span class="text-secondary">Prompt Engineering</span>
-                            <div class="w-20 h-2 bg-card rounded-full">
+                            <span class="text-secondary dark:text-gray-600">Prompt Engineering</span>
+                            <div class="w-20 h-2 bg-card rounded-full dark:bg-gray-200">
                                 <div class="h-full bg-warning rounded-full skill-bar" style="width: 85%"></div>
                             </div>
                         </div>
@@ -362,23 +383,23 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 bg-dark relative z-10">
+    <section id="education" class="py-20 bg-dark relative z-10 dark:bg-light">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Education</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
                     My academic journey and qualifications
                 </p>
             </div>
 
             <div class="max-w-4xl mx-auto space-y-8">
                 <!-- Education Item 1 -->
-                <div class="bg-card rounded-2xl p-8 card-hover animate-slide-in-left">
+                <div class="bg-card rounded-2xl p-8 card-hover animate-slide-in-left dark:bg-white dark:shadow-md">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <h3 class="text-2xl font-semibold text-primary mb-2">Bachelor of Technology in Computer Science and Engineering</h3>
-                            <p class="text-lg text-secondary mb-2">GLA University, Mathura</p>
-                            <p class="text-secondary">Third Year Student | Expected Graduation: 2027</p>
+                            <p class="text-lg text-secondary mb-2 dark:text-gray-600">GLA University, Mathura</p>
+                            <p class="text-secondary dark:text-gray-600">Third Year Student | Expected Graduation: 2027</p>
                         </div>
                         <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
                             <i class="fas fa-graduation-cap text-primary text-2xl"></i>
@@ -387,12 +408,12 @@
                 </div>
 
                 <!-- Education Item 2 -->
-                <div class="bg-card rounded-2xl p-8 card-hover animate-slide-in-right">
+                <div class="bg-card rounded-2xl p-8 card-hover animate-slide-in-right dark:bg-white dark:shadow-md">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <h3 class="text-2xl font-semibold text-primary mb-2">Intermediate Degree (12th Grade)</h3>
-                            <p class="text-lg text-secondary mb-2">Janta Vidhyalaya Inter Collage, Bakewar, Etawah</p>
-                            <p class="text-secondary">Graduation: 2021 | Grade: 67%</p>
+                            <p class="text-lg text-secondary mb-2 dark:text-gray-600">Janta Vidhyalaya Inter Collage, Bakewar, Etawah</p>
+                            <p class="text-secondary dark:text-gray-600">Graduation: 2021 | Grade: 67%</p>
                         </div>
                         <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center">
                             <i class="fas fa-school text-accent text-2xl"></i>
@@ -401,12 +422,12 @@
                 </div>
 
                 <!-- Education Item 3 -->
-                <div class="bg-card rounded-2xl p-8 card-hover animate-slide-in-left">
+                <div class="bg-card rounded-2xl p-8 card-hover animate-slide-in-left dark:bg-white dark:shadow-md">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <h3 class="text-2xl font-semibold text-primary mb-2">High School (10th Grade)</h3>
-                            <p class="text-lg text-secondary mb-2">Saraswati Vidhya Mandir, Dibiyapur, Auraiya</p>
-                            <p class="text-secondary">Graduation: 2023 | Grade: 86%</p>
+                            <p class="text-lg text-secondary mb-2 dark:text-gray-600">Saraswati Vidhya Mandir, Dibiyapur, Auraiya</p>
+                            <p class="text-secondary dark:text-gray-600">Graduation: 2023 | Grade: 86%</p>
                         </div>
                         <div class="w-16 h-16 bg-success/10 rounded-xl flex items-center justify-center">
                             <i class="fas fa-book text-success text-2xl"></i>
@@ -418,22 +439,22 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-card relative z-10">
+    <section id="certifications" class="py-20 bg-card relative z-10 dark:bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Certifications</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
                     Professional certifications and achievements
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Certification 1 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-primary">META FRONTEND DEVELOPER</h3>
-                            <p class="text-secondary">Meta, 2025</p>
+                            <p class="text-secondary dark:text-gray-600">Meta, 2025</p>
                         </div>
                         <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                             <i class="fab fa-meta text-primary"></i>
@@ -446,11 +467,11 @@
                 </div>
 
                 <!-- Certification 2 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.1s">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.1s">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-primary">MICROSOFT AZURE DEVELOPER</h3>
-                            <p class="text-secondary">Microsoft, 2025</p>
+                            <p class="text-secondary dark:text-gray-600">Microsoft, 2025</p>
                         </div>
                         <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                             <i class="fab fa-microsoft text-accent"></i>
@@ -463,11 +484,11 @@
                 </div>
 
                 <!-- Certification 3 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.2s">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.2s">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-primary">CYBERSECURITY ENGINEER</h3>
-                            <p class="text-secondary">Google, 2025</p>
+                            <p class="text-secondary dark:text-gray-600">Google, 2025</p>
                         </div>
                         <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
                             <i class="fab fa-google text-success"></i>
@@ -480,11 +501,11 @@
                 </div>
 
                 <!-- Certification 4 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.3s">
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.3s">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-primary">AI/ML ENGINEER</h3>
-                            <p class="text-secondary">AI/ML (Microsoft), 2025</p>
+                            <p class="text-secondary dark:text-gray-600">AI/ML (Microsoft), 2025</p>
                         </div>
                         <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
                             <i class="fas fa-robot text-warning"></i>
@@ -508,23 +529,23 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-dark relative z-10">
+    <section id="projects" class="py-20 bg-dark relative z-10 dark:bg-light">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Projects</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
                     Some of my recent work and personal projects
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Project 1 -->
-                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up">
+                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
                     <h3 class="text-2xl font-semibold text-primary mb-4">Hostel Management System</h3>
-                    <p class="text-secondary mb-4 leading-relaxed">
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
                         This is a simple website to help manage hostel work for students and wardens. It can be used to keep student details, ask for leave, and check mess payments.
                     </p>
-                    <ul class="text-secondary mb-6 space-y-2">
+                    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
                         <li class="flex items-center gap-2">
                             <i class="fas fa-check text-success text-sm"></i>
                             Separate pages for wardens and students
@@ -542,7 +563,7 @@
                             Works on both phone and computer
                         </li>
                     </ul>
-                    <p class="text-secondary mb-4"><strong>Technologies Used:</strong> HTML, CSS</p>
+                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML, CSS</p>
                     <div class="flex flex-wrap gap-4">
                         <a href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
                             <i class="fab fa-github"></i>
@@ -558,12 +579,12 @@
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up" style="animation-delay: 0.1s">
+                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.1s">
                     <h3 class="text-2xl font-semibold text-primary mb-4">Calculator</h3>
-                    <p class="text-secondary mb-4 leading-relaxed">
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
                         This is a calculator that can do normal math, tell your age, and change money from one currency to another.
                     </p>
-                    <ul class="text-secondary mb-6 space-y-2">
+                    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
                         <li class="flex items-center gap-2">
                             <i class="fas fa-check text-success text-sm"></i>
                             Do normal maths like add, subtract, multiply, and divide
@@ -581,7 +602,7 @@
                             Easy to use and works on phone or computer
                         </li>
                     </ul>
-                    <p class="text-secondary mb-4"><strong>Technologies Used:</strong> HTML, CSS</p>
+                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML, CSS</p>
                     <div class="flex flex-wrap gap-4">
                         <a href="https://github.com/Anubhav7417/smart-calculator" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
                             <i class="fab fa-github"></i>
@@ -601,29 +622,29 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-card relative z-10">
+    <section id="experience" class="py-20 bg-card relative z-10 dark:bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Experience</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
                     My professional journey and internships
                 </p>
             </div>
 
             <div class="max-w-4xl mx-auto space-y-8">
                 <!-- Experience 1 -->
-                <div class="bg-dark rounded-2xl p-8 card-hover animate-slide-in-left">
+                <div class="bg-dark rounded-2xl p-8 card-hover animate-slide-in-left dark:bg-white dark:shadow-md">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="text-2xl font-semibold text-primary">Python Programming Intern</h3>
-                            <p class="text-lg text-secondary">CodSoft</p>
+                            <p class="text-lg text-secondary dark:text-gray-600">CodSoft</p>
                             <p class="text-accent">Nov 2024 - Dec 2024</p>
                         </div>
                         <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
                             <i class="fab fa-python text-primary text-2xl"></i>
                         </div>
                     </div>
-                    <ul class="text-secondary space-y-2">
+                    <ul class="text-secondary space-y-2 dark:text-gray-600">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-circle text-primary text-xs mt-2"></i>
                             <span>Undertook Python programming tasks to enhance software functionality.</span>
@@ -636,18 +657,18 @@
                 </div>
 
                 <!-- Experience 2 -->
-                <div class="bg-dark rounded-2xl p-8 card-hover animate-slide-in-right">
+                <div class="bg-dark rounded-2xl p-8 card-hover animate-slide-in-right dark:bg-white dark:shadow-md">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <h3 class="text-2xl font-semibold text-primary">Python Programming Intern</h3>
-                            <p class="text-lg text-secondary">InternPe</p>
+                            <p class="text-lg text-secondary dark:text-gray-600">InternPe</p>
                             <p class="text-accent">Nov 2024 - Dec 2024</p>
                         </div>
                         <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center">
                             <i class="fas fa-laptop-code text-accent text-2xl"></i>
                         </div>
                     </div>
-                    <ul class="text-secondary space-y-2">
+                    <ul class="text-secondary space-y-2 dark:text-gray-600">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-circle text-accent text-xs mt-2"></i>
                             <span>Gained practical experience in Python development and scripting.</span>
@@ -663,11 +684,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark relative z-10">
+    <section id="contact" class="py-20 bg-dark relative z-10 dark:bg-light">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Contact Me</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
                     Get in touch for collaborations or opportunities
                 </p>
             </div>
@@ -675,75 +696,75 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Info -->
                 <div class="space-y-6">
-                    <div class="bg-card rounded-2xl p-6 card-hover">
+                    <div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                                 <i class="fas fa-envelope text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold">Email</h3>
-                                <a href="mailto:jonsnower07@gmail.com" class="text-secondary hover:text-primary transition-colors duration-300">jonsnower07@gmail.com</a>
+                                <h3 class="text-lg font-semibold dark:text-dark">Email</h3>
+                                <a href="mailto:jonsnower07@gmail.com" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">jonsnower07@gmail.com</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-card rounded-2xl p-6 card-hover">
+                    <div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                                 <i class="fas fa-phone text-accent text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold">Phone</h3>
-                                <a href="tel:+917217486817" class="text-secondary hover:text-primary transition-colors duration-300">+91 7217486817</a>
+                                <h3 class="text-lg font-semibold dark:text-dark">Phone</h3>
+                                <a href="tel:+917217486817" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">+91 7217486817</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-card rounded-2xl p-6 card-hover">
+                    <div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
                                 <i class="fab fa-x-twitter text-warning text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold">X (Twitter)</h3>
-                                <a href="https://x.com/fav7659" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300">@fav7659</a>
+                                <h3 class="text-lg font-semibold dark:text-dark">X (Twitter)</h3>
+                                <a href="https://x.com/fav7659" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">@fav7659</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-card rounded-2xl p-6 card-hover">
+                    <div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
                                 <i class="fab fa-instagram text-success text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold">Instagram</h3>
-                                <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300">is_.eccedentesiast.bin</a>
+                                <h3 class="text-lg font-semibold dark:text-dark">Instagram</h3>
+                                <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">is_.eccedentesiast.bin</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
-                <div class="bg-card rounded-2xl p-8 card-hover">
+                <div class="bg-card rounded-2xl p-8 card-hover dark:bg-white dark:shadow-md">
                     <form action="https://formspree.io/f/mkgzekzr" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-semibold mb-2">Name</label>
-                                <input type="text" name="name" required class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" placeholder="Your Name">
+                                <label class="block text-sm font-semibold mb-2 dark:text-dark">Name</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 dark:bg-gray-100 dark:border-gray-300 dark:text-dark" placeholder="Your Name">
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold mb-2">Email</label>
-                                <input type="email" name="email" required class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" placeholder="Your Email">
+                                <label class="block text-sm font-semibold mb-2 dark:text-dark">Email</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 dark:bg-gray-100 dark:border-gray-300 dark:text-dark" placeholder="Your Email">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">Phone (Optional)</label>
-                            <input type="tel" name="phone" class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" placeholder="Your Phone Number">
+                            <label class="block text-sm font-semibold mb-2 dark:text-dark">Phone (Optional)</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 dark:bg-gray-100 dark:border-gray-300 dark:text-dark" placeholder="Your Phone Number">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2">Purpose or Message</label>
-                            <textarea name="message" required rows="5" class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none" placeholder="Purpose or Message"></textarea>
+                            <label class="block text-sm font-semibold mb-2 dark:text-dark">Purpose or Message</label>
+                            <textarea name="message" required rows="5" class="w-full px-4 py-3 bg-dark border border-card rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none dark:bg-gray-100 dark:border-gray-300 dark:text-dark" placeholder="Purpose or Message"></textarea>
                         </div>
                         <button type="submit" class="w-full py-4 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
                             Send Message
@@ -755,23 +776,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-card border-t border-dark relative z-10">
+    <footer class="py-8 bg-card border-t border-dark relative z-10 dark:bg-gray-100 dark:border-gray-200">
         <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-4">
-                <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300">
+                <a href="https://www.linkedin.com/in/anubhav-singh-aa800b307" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">
                     <i class="fab fa-linkedin text-xl"></i>
                 </a>
-                <a href="https://github.com/Anubhav7417" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300">
+                <a href="https://github.com/Anubhav7417" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">
                     <i class="fab fa-github text-xl"></i>
                 </a>
-                <a href="https://x.com/fav7659" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300">
+                <a href="https://x.com/fav7659" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">
                     <i class="fab fa-x-twitter text-xl"></i>
                 </a>
-                <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300">
+                <a href="https://www.instagram.com/is_.eccedentesiast.bin/" target="_blank" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">
                     <i class="fab fa-instagram text-xl"></i>
                 </a>
             </div>
-            <p class="text-secondary">
+            <p class="text-secondary dark:text-gray-600">
                 &copy; Hey This is Anubhav And that's My Portfolio.
             </p>
         </div>
@@ -823,10 +844,58 @@
             }
         }
 
+        // Dark Mode Toggle
+        class ThemeToggle {
+            constructor() {
+                this.toggleButton = document.getElementById('theme-toggle');
+                this.moonIcon = this.toggleButton.querySelector('i');
+                this.init();
+            }
+
+            init() {
+                // Check for saved theme preference or default to dark
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                this.setTheme(savedTheme);
+                
+                // Add event listener to toggle button
+                this.toggleButton.addEventListener('click', () => {
+                    this.toggleTheme();
+                });
+            }
+
+            toggleTheme() {
+                const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                this.setTheme(newTheme);
+            }
+
+            setTheme(theme) {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    this.moonIcon.classList.remove('fa-sun');
+                    this.moonIcon.classList.add('fa-moon');
+                    this.moonIcon.classList.remove('text-gray-600');
+                    this.moonIcon.classList.add('text-yellow-400');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    this.moonIcon.classList.remove('fa-moon');
+                    this.moonIcon.classList.add('fa-sun');
+                    this.moonIcon.classList.remove('text-yellow-400');
+                    this.moonIcon.classList.add('text-gray-600');
+                }
+                
+                // Save theme preference
+                localStorage.setItem('theme', theme);
+            }
+        }
+
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize particle system
             new ParticleSystem();
+
+            // Initialize theme toggle
+            new ThemeToggle();
 
             // Animate skill bars when they come into view
             const skillBars = document.querySelectorAll('.skill-bar');
