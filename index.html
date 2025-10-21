@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anubhav Singh | Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -210,9 +211,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" class="flex items-center">
-                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-2">
-                        <span class="text-white font-bold">A</span>
-                    </div>
+                    <img src="Assets/letter-a.png" alt="Logo" class="h-10 w-10 rounded-full mr-2">
                     <span class="text-xl font-bold gradient-text">Anubhav</span>
                 </a>
                 
@@ -243,9 +242,7 @@
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
                 <a href="#home" class="flex items-center">
-                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-2">
-                        <span class="text-white font-bold text-sm">A</span>
-                    </div>
+                    <img src="Assets/letter-a.png" alt="Logo" class="h-8 w-8 rounded-full mr-2">
                     <span class="text-lg font-bold gradient-text">Anubhav</span>
                 </a>
                 <button id="close-menu" class="text-secondary dark:text-gray-600">
@@ -327,26 +324,15 @@
                             <i class="fas fa-paper-plane"></i>
                             Get in Touch
                         </a>
-                        <a href="#" target="_blank" class="px-8 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2">
+                        <a href="Assets/resume...pdf" target="_blank" class="px-8 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2">
                             <i class="fas fa-file-lines"></i>
                             View CV
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Content - Profile Image -->
-                <div class="flex justify-center animate-fade-in-up">
-                    <div class="relative">
-                        <div class="w-80 h-80 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
-                            <div class="w-72 h-72 bg-dark dark:bg-light rounded-full flex items-center justify-center">
-                                <i class="fas fa-user text-8xl text-primary/50"></i>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-card dark:bg-gray-200 rounded-2xl flex items-center justify-center animate-bounce-soft">
-                            <i class="fas fa-code text-3xl text-primary"></i>
-                        </div>
-                    </div>
-                </div>
+                <!-- Right Content -->
+                    <!-- Right Content (removed blue gradient square) -->
             </div>
         </div>
     </section>
@@ -533,8 +519,122 @@
         </div>
     </section>
 
+        <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-card relative z-10 dark:bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Certifications</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
+                    Professional certifications and achievements
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Certification 1 -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">META FRONTEND DEVELOPER</h3>
+                            <p class="text-secondary dark:text-gray-600">Meta, 2025</p>
+                        </div>
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-meta text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <a href="Assets/Front End Developer.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm">
+                            <i class="fas fa-file-pdf"></i>
+                            View Certificate
+                        </a>
+                        <a href="https://share.google/0tW5rPIgG0ROt4HS7" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.1s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">MICROSOFT AZURE DEVELOPER</h3>
+                            <p class="text-secondary dark:text-gray-600">Microsoft, 2025</p>
+                        </div>
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-microsoft text-accent"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <a href="Assets/Azure AI Essentials.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm">
+                            <i class="fas fa-file-pdf"></i>
+                            View Certificate
+                        </a>
+                        <!--<a href="https://learn.microsoft.com/api/achievements/share/XXXXXXXX" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Credential
+                        </a>-->
+                    </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.2s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">CYBERSECURITY ENGINEER</h3>
+                            <p class="text-secondary dark:text-gray-600">Google, 2025</p>
+                        </div>
+                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-google text-success"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <a href="Assets/Cyber Security Professional.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm">
+                            <i class="fas fa-file-pdf"></i>
+                            View Certificate
+                        </a>
+                        <a href="https://share.google/89nldAXrYSiTJCxfD" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.3s">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">AI/ML ENGINEER</h3>
+                            <p class="text-secondary dark:text-gray-600">AI/ML (Microsoft), 2025</p>
+                        </div>
+                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-robot text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <a href="Assets/AI & ML Engineering.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm">
+                            <i class="fas fa-file-pdf"></i>
+                            View Certificate
+                        </a>
+                        <a href="https://share.google/Lg7LbpDRCH1r29smP" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Drive Link -->
+            <div class="text-center mt-12">
+                <a href="https://drive.google.com/drive/folders/1c9x8i49PSmxRaD_USLw-6-1x-JDHPY7u?role=reader" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                    <i class="fab fa-google-drive"></i>
+                    View All Certifications on My Google Drive.
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-card relative z-10 dark:bg-gray-100">
+    <section id="projects" class="py-20 bg-dark relative z-10 dark:bg-light">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Projects</h2>
@@ -545,7 +645,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Project 1 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
+                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
                     <h3 class="text-2xl font-semibold text-primary mb-4">Hostel Management System</h3>
                     <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
                         This is a simple website to help manage hostel work for students and wardens. It can be used to keep student details, ask for leave, and check mess payments.
@@ -583,46 +683,320 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
-                    <h3 class="text-2xl font-semibold text-primary mb-4">BookHub - Digital Library Platform</h3>
+                <!-- Project 2-->
+<div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
+    <h3 class="text-2xl font-semibold text-primary mb-4">BookHub - Digital Library Platform</h3>
+    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+        <p>"Mini Project"</p>
+        A modern React-based digital library application that allows users to discover books, manage personal libraries, 
+        and track reading progress. Features secure authentication and a beautiful dark theme interface.
+    </p>
+    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+        <li class="flex items-center gap-2">
+            <i class="fas fa-check text-success text-sm"></i>
+            User authentication system with secure login
+        </li>
+        <li class="flex items-center gap-2">
+            <i class="fas fa-check text-success text-sm"></i>
+            Personal library management with add/remove functionality
+        </li>
+        <li class="flex items-center gap-2">
+            <i class="fas fa-check text-success text-sm"></i>
+            Advanced search and genre-based filtering
+        </li>
+        <li class="flex items-center gap-2">
+            <i class="fas fa-check text-success text-sm"></i>
+            Responsive design with modern dark theme
+        </li>
+        <li class="flex items-center gap-2">
+            <i class="fas fa-check text-success text-sm"></i>
+            Real book covers and detailed information
+        </li>
+        <li class="flex items-center gap-2">
+            <i class="fas fa-check text-success text-sm"></i>
+            Reading progress tracking and statistics
+        </li>
+    </ul>
+    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> React.js, JavaScript, CSS3, HTML5, Font Awesome Icons</p>
+    <div class="flex flex-wrap gap-4">
+        <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+            <i class="fab fa-github"></i>
+            Source Code
+        </a>
+        <a href="https://book-review-app-gamma-pearl.vercel.app/#" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+            <i class="fas fa-globe"></i>
+            Live Demo
+        </a>
+        <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-green-600 transition-colors duration-300">
+            In-progress
+        </button>
+    </div>
+</div>
+                <!-- Project 3-->
+                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">CareerPath AI</h3>
                     <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                        A modern React-based digital library application that allows users to discover books, manage personal libraries, 
-                        and track reading progress. Features secure authentication and a beautiful dark theme interface.
+                        <p>"Hackathon submitted Project"</p>
+                       CareerPath AI is an intelligent career guidance platform that uses Google's Gemini AI to provide personalized career recommendations based on your skills, interests, and goals.
                     </p>
                     <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
                         <li class="flex items-center gap-2">
                             <i class="fas fa-check text-success text-sm"></i>
-                            User authentication system with secure login
+                            Get career suggestions powered by Google Gemini AI.
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fas fa-check text-success text-sm"></i>
-                            Personal library management with add/remove functionality
+                           12-week structured plan with curated resources.
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fas fa-check text-success text-sm"></i>
-                            Advanced search and genre-based filtering
+                            Identify missing skills and get learning recommendations.
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fas fa-check text-success text-sm"></i>
-                            Responsive design with modern dark theme
+                            3 tailored career paths with match percentages.
                         </li>
                     </ul>
-                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> React.js, JavaScript, CSS3, HTML5</p>
+                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML, CSS</p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        <a href="https://github.com/Anubhav7417/CAREERPATH-AI/tree/main" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
                             <i class="fab fa-github"></i>
                             Source Code
                         </a>
-                        <a href="https://book-review-app-gamma-pearl.vercel.app/#" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+                        <a href="https://careerpath-ai-neon.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
                             <i class="fas fa-globe"></i>
                             Live Demo
                         </a>
-                        <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-green-600 transition-colors duration-300">
-                            In-progress
+                        <button class="px-4 py-2 bg-warning text-white rounded-lg hover:bg-amber-600 transition-colors duration-300">
+                            Completed
                         </button>
                     </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.1s">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Calculator</h3>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        This is a calculator that can do normal math, tell your age, and change money from one currency to another.
+                    </p>
+                    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-success text-sm"></i>
+                            Do normal maths like add, subtract, multiply, and divide
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-success text-sm"></i>
+                            Find age from date of birth
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-success text-sm"></i>
+                            Change money between different countries
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-success text-sm"></i>
+                            Easy to use and works on phone or computer
+                        </li>
+                    </ul>
+                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML, CSS</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Anubhav7417/smart-calculator" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                            Source Code
+                        </a>
+                        <a href="https://smart-calculator-a6xr.onrender.com" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+                            <i class="fas fa-globe"></i>
+                            Live Demo
+                        </a>
+                        <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
+                            completed
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GitHub Section -->
+    <section id="Github" class="py-20 bg-card relative z-10 dark:bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">GitHub Showcase</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
+                    My featured GitHub repositories and contributions
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- GitHub Repo 1 - BOOK_REVIEW_APP -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Book Review App</h3>
+                        <span class="text-xs bg-primary text-white px-2 py-1 rounded-full">P 1</span>
+                    </div>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        A React-based book review application with modern UI and interactive features for book enthusiasts.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-secondary text-sm dark:text-gray-600">JS/HTML/CSS</span>
+                        <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="text-primary hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GitHub Repo 2 - MY_PORTFOLIO -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.1s">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Portfolio Website</h3>
+                        <span class="text-xs bg-accent text-white px-2 py-1 rounded-full">P 2</span>
+                    </div>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        Professional portfolio website built with HTML, Tailwind CSS, and JavaScript featuring dynamic content.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-secondary text-sm dark:text-gray-600">JS/HTML/CSS</span>
+                        <a href="https://github.com/Anubhav7417/MY_PORTFOLIO" target="_blank" class="text-primary hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GitHub Repo 3 - PYTHON_UTILITY_APPS -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.2s">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Python Utility Apps</h3>
+                        <span class="text-xs bg-success text-white px-2 py-1 rounded-full">P 3</span>
+                    </div>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        Collection of three Tkinter desktop apps: Smart Calculator, Password Generator, and To-Do List with Timer.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-secondary text-sm dark:text-gray-600">Python</span>
+                        <a href="https://github.com/Anubhav7417/PROJECTS" target="_blank" class="text-primary hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- GitHub Repo 4 - FUNNY PROJECTS -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.2s">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Few Funny Projects</h3>
+                        <span class="text-xs bg-success text-white px-2 py-1 rounded-full">P 4</span>
+                    </div>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        Collection of few funny and unique projects.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-secondary text-sm dark:text-gray-600">HTML/CSS/JS</span>
+                        <a href="https://github.com/Anubhav7417/FUNNY-PROJECTS" target="_blank" class="text-primary hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- GitHub Repo 4 - SOLAR_SYSTEM -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.3s">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">Solar System</h3>
+                        <span class="text-xs bg-[#E9ECEF] text-black px-2 py-1 rounded-full">P 4</span>
+                    </div>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        Animated solar system simulation with pure HTML and CSS, featuring planets orbiting the Sun.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-secondary text-sm dark:text-gray-600">HTML/CSS</span>
+                        <a href="https://github.com/Anubhav7417/SOLAR_SYSTEM" target="_blank" class="text-primary hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GitHub Repo 5 - CareerPath Ai -->
+                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md" style="animation-delay: 0.4s">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-primary">CareerPath AI</h3>
+                        <span class="text-xs bg-primary text-white px-2 py-1 rounded-full">P 5</span>
+                    </div>
+                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                        AI-powered insights for navigating modern career paths with intelligent recommendations.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-secondary text-sm dark:text-gray-600">HTML/CSS/JS</span>
+                        <a href="https://github.com/Anubhav7417/CAREERPATH-AI" target="_blank" class="text-primary hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Profile Link -->
+            <div class="text-center mt-12">
+                <a href="https://github.com/Anubhav7417" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-dark text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors duration-300 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <i class="fab fa-github"></i>
+                    View My GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-card relative z-10 dark:bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Experience</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
+                    My professional journey and internships
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Experience 1 -->
+                <div class="bg-dark rounded-2xl p-8 card-hover animate-slide-in-left dark:bg-white dark:shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-primary">Python Programming Intern</h3>
+                            <p class="text-lg text-secondary dark:text-gray-600">CodSoft</p>
+                            <p class="text-accent">Nov 2024 - Dec 2024</p>
+                        </div>
+                        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <i class="fab fa-python text-primary text-2xl"></i>
+                        </div>
+                    </div>
+                    <ul class="text-secondary space-y-2 dark:text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                            <span>Undertook Python programming tasks to enhance software functionality.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                            <span>Applied problem-solving skills in a professional development environment.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="bg-dark rounded-2xl p-8 card-hover animate-slide-in-right dark:bg-white dark:shadow-md">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-primary">Python Programming Intern</h3>
+                            <p class="text-lg text-secondary dark:text-gray-600">InternPe</p>
+                            <p class="text-accent">Nov 2024 - Dec 2024</p>
+                        </div>
+                        <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-accent text-2xl"></i>
+                        </div>
+                    </div>
+                    <ul class="text-secondary space-y-2 dark:text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
+                            <span>Gained practical experience in Python development and scripting.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-circle text-accent text-xs mt-2"></i>
+                            <span>Collaborated on projects to implement new features and optimizations.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -652,6 +1026,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--<div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold dark:text-dark">Phone</h3>
+                                <a href="tel:+917217486817" class="text-secondary hover:text-primary transition-colors duration-300 dark:text-gray-600">+91 7217486817</a>
+                            </div>
+                        </div>
+                    </div>-->
 
                     <div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
                         <div class="flex items-center gap-4">
