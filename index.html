@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anubhav Singh | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -197,11 +196,6 @@
     </style>
 </head>
 <body class="bg-dark text-light min-h-screen relative overflow-x-hidden dark:bg-light dark:text-dark">
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle" class="fixed top-24 right-6 z-50 p-3 bg-card dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-        <i class="fas fa-moon text-yellow-400 dark:text-gray-600"></i>
-    </button>
-
     <!-- Animated Background -->
     <div class="fixed inset-0 z-0 grid-bg dark:grid-bg-light"></div>
     <div id="particles-container" class="fixed inset-0 z-0"></div>
@@ -211,7 +205,9 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" class="flex items-center">
-                    <img src="Assets/letter-a.png" alt="Logo" class="h-10 w-10 rounded-full mr-2">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-2">
+                        <span class="text-white font-bold">A</span>
+                    </div>
                     <span class="text-xl font-bold gradient-text">Anubhav</span>
                 </a>
                 
@@ -226,10 +222,17 @@
                     <a href="#contact" class="text-secondary hover:text-primary transition-colors duration-300 font-medium dark:text-gray-600 dark:hover:text-primary">Contact</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-secondary dark:text-gray-600">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 bg-card dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                        <i class="fas fa-moon text-yellow-400 dark:text-gray-600"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="md:hidden text-secondary dark:text-gray-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -242,7 +245,9 @@
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
                 <a href="#home" class="flex items-center">
-                    <img src="Assets/letter-a.png" alt="Logo" class="h-8 w-8 rounded-full mr-2">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-2">
+                        <span class="text-white font-bold text-sm">A</span>
+                    </div>
                     <span class="text-lg font-bold gradient-text">Anubhav</span>
                 </a>
                 <button id="close-menu" class="text-secondary dark:text-gray-600">
@@ -282,8 +287,7 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-20 relative z-10">
         <div class="container mx-auto px-6 py-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
+            <div class="max-w-4xl mx-auto">
                 <div class="space-y-8 animate-fade-in-up">
                     <div class="space-y-6">
                         <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
@@ -324,15 +328,12 @@
                             <i class="fas fa-paper-plane"></i>
                             Get in Touch
                         </a>
-                        <a href="Assets/resume...pdf" target="_blank" class="px-8 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2">
+                        <a href="#" target="_blank" class="px-8 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2">
                             <i class="fas fa-file-lines"></i>
                             View CV
                         </a>
                     </div>
                 </div>
-
-                <!-- Right Content -->
-                    <!-- Right Content (removed blue gradient square) -->
             </div>
         </div>
     </section>
@@ -519,7 +520,7 @@
         </div>
     </section>
 
-        <!-- Certifications Section -->
+    <!-- Certifications Section -->
     <section id="certifications" class="py-20 bg-card relative z-10 dark:bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -569,10 +570,6 @@
                             <i class="fas fa-file-pdf"></i>
                             View Certificate
                         </a>
-                        <!--<a href="https://learn.microsoft.com/api/achievements/share/XXXXXXXX" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Credential
-                        </a>-->
                     </div>
                 </div>
 
@@ -814,8 +811,7 @@
             </div>
         </div>
     </section>
-    
-    <!-- GitHub Section -->
+        <!-- GitHub Section -->
     <section id="Github" class="py-20 bg-card relative z-10 dark:bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -1026,7 +1022,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!--<div class="bg-card rounded-2xl p-6 card-hover dark:bg-white dark:shadow-md">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
