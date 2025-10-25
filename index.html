@@ -407,9 +407,9 @@
 
                 <div class="flex items-center space-x-4">
                     <!-- Audio Toggle Button -->
-                    <button id="audio-toggle" class="p-2 bg-card dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 audio-toggle">
+                    <!--<button id="audio-toggle" class="p-2 bg-card dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 audio-toggle">
                         <i class="fas fa-volume-up text-primary dark:text-primary"></i>
-                    </button>
+                    </button>-->
 
                     <!-- Dark Mode Toggle -->
                     <button id="theme-toggle" class="p-2 bg-card dark:bg-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 magnetic-hover">
@@ -1527,13 +1527,13 @@
                 this.init();
             }
 
-            init() {
+           // init() {
                 // Create audio elements (using data URIs for simple tones)
-                this.hoverSound = new Audio('Assets/hoversound.wav');
-                this.clickSound = new Audio('Assets/clicksound.wav');
-                this.audioToggle.addEventListener('click', () => {
-                    this.toggleAudio();
-                });
+                //this.hoverSound = new Audio('Assets/hoversound.wav');
+                //this.clickSound = new Audio('Assets/clicksound.wav');
+                //this.audioToggle.addEventListener('click', () => {
+                   //this.toggleAudio();
+               // });
 
                 // Add audio to interactive elements
                 const interactiveElements = document.querySelectorAll('a, button');
