@@ -2,7 +2,6 @@
 
 This is a personal portfolio website showcasing my skills, certifications, events, education, services, and professional experience.  
 It is built using **HTML**, **CSS**, and **Font Awesome** for icons, and is fully responsive.
-
 ## Features
 - **Responsive Design** – Works seamlessly across devices.
 - **Animated UI** – Smooth animations for header, background, and elements.
