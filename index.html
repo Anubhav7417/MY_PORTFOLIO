@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anubhav Singh | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -354,21 +355,41 @@
             transform: scale(1);
         }
 
-        /* Project Banner Styles */
+        /* Project Banner Styles with Images */
         .project-banner {
             width: 100%;
-            height: 200px;
+            height: 250px;
             border-radius: 12px 12px 0 0;
             overflow: hidden;
             margin-bottom: 1.5rem;
             position: relative;
-            background: linear-gradient(135deg, #2563eb, #06b6d4);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
             font-size: 1.5rem;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .project-banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .project-banner-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
         }
 
         .project-banner i {
@@ -376,27 +397,657 @@
             margin-right: 1rem;
         }
 
-        /* Specific banner colors */
-        .banner-hostel {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-        }
-
-        .banner-bookhub {
-            background: linear-gradient(135deg, #06b6d4, #0891b2);
-        }
-
-        .banner-careerpath {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .banner-calculator {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
         /* Banner icons */
         .banner-icon {
             font-size: 2.5rem;
             opacity: 0.9;
+        }
+
+        /* Projects Carousel Styles */
+        .projects-carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .projects-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 2rem;
+        }
+
+        .project-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .carousel-btn:hover {
+            background: #2563eb;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-btn:disabled:hover {
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0 1rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .carousel-dot.active {
+            background: #2563eb;
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background: #2563eb;
+            transform: scale(1.1);
+        }
+
+        /* Mobile touch support */
+        .projects-slider {
+            cursor: grab;
+        }
+
+        .projects-slider:active {
+            cursor: grabbing;
+        }
+
+        /* Dark mode support */
+        .dark .carousel-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .dark .carousel-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .dark .carousel-dot {
+            background: #94a3b8;
+        }
+
+        .dark .carousel-dot.active {
+            background: #2563eb;
+        }
+
+        /* Animation for slide changes */
+        .slide-next {
+            animation: slideNext 0.5s ease-in-out;
+        }
+
+        .slide-prev {
+            animation: slidePrev 0.5s ease-in-out;
+        }
+
+        @keyframes slideNext {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slidePrev {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .carousel-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .carousel-dot {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .projects-slider {
+                gap: 1rem;
+            }
+            
+            .project-banner {
+                height: 200px;
+                font-size: 1.2rem;
+                padding: 0 0.5rem;
+            }
+            
+            .project-banner i {
+                font-size: 2rem;
+                margin-right: 0.5rem;
+            }
+            
+            .banner-icon {
+                font-size: 2rem;
+            }
+
+            .project-banner-content {
+                padding: 0.75rem 1.5rem;
+            }
+        }
+
+        /* Security Features - Hidden from view */
+        #security-monitor,
+        #security-canvas {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            top: -9999px !important;
+            left: -9999px !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
+        }
+
+        /* Security fingerprint styles */
+        .security-fingerprint {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            height: 1px;
+            opacity: 0.001;
+            z-index: -9999;
+            pointer-events: none;
+        }
+
+        /* Anti-bot detection */
+        .anti-bot-trap {
+            display: none !important;
+        }
+
+        /* Honeypot field styles */
+        .honeypot-field {
+            position: absolute !important;
+            left: -9999px !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+        }
+
+        /* Security monitoring elements */
+        .security-beacon {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            z-index: -9999;
+        }
+
+        /* Integrity check element */
+        .integrity-check {
+            display: none;
+            visibility: hidden;
+        }
+
+        /* Tamper detection */
+        .tamper-detection {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            z-index: -9999;
+        }
+
+        /* Security overlay protection */
+        .security-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2147483647;
+            pointer-events: none;
+            opacity: 0;
+            background: transparent;
+        }
+
+        /* Bot behavior detection */
+        .bot-detection {
+            display: none !important;
+        }
+
+        /* Security challenge element */
+        .security-challenge {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* Protection against automated tools */
+        .automation-protection {
+            display: none;
+            visibility: hidden;
+        }
+
+        /* Security watermark */
+        .security-watermark {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            font-size: 0;
+            color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* Anti-scraping protection */
+        .anti-scraping {
+            display: none !important;
+        }
+
+        /* Security token */
+        .security-token {
+            display: none;
+            visibility: hidden;
+        }
+
+        /* Protection layer */
+        .protection-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Security monitoring */
+        .security-monitor {
+            display: none !important;
+        }
+
+        /* Integrity verification */
+        .integrity-verification {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        /* Anti-tampering */
+        .anti-tampering {
+            display: none;
+        }
+
+        /* Security validation */
+        .security-validation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            z-index: -9999;
+        }
+
+        /* Bot protection */
+        .bot-protection {
+            display: none !important;
+        }
+
+        /* Security checks */
+        .security-check {
+            display: none;
+            visibility: hidden;
+        }
+
+        /* Protection against malicious scripts */
+        .malicious-script-protection {
+            display: none;
+        }
+
+        /* Security barrier */
+        .security-barrier {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2147483646;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        /* Content protection */
+        .content-protection {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* Right-click protection */
+        .right-click-protection {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2147483645;
+            pointer-events: none;
+        }
+
+        /* Developer tools detection */
+        .dev-tools-detection {
+            display: none;
+        }
+
+        /* Security metrics */
+        .security-metrics {
+            display: none !important;
+        }
+
+        /* Protection system */
+        .protection-system {
+            display: none;
+        }
+
+        /* Security overlay */
+        .security-overlay-active {
+            display: none;
+        }
+
+        /* Anti-debugging */
+        .anti-debugging {
+            display: none;
+        }
+
+        /* Code protection */
+        .code-protection {
+            display: none;
+        }
+
+        /* Security shield */
+        .security-shield {
+            display: none;
+        }
+
+        /* Protection against inspection */
+        .inspection-protection {
+            display: none;
+        }
+
+        /* Security wrapper */
+        .security-wrapper {
+            display: contents;
+        }
+
+        /* Tamper-proof */
+        .tamper-proof {
+            display: none;
+        }
+
+        /* Security envelope */
+        .security-envelope {
+            display: none;
+        }
+
+        /* Protection mechanism */
+        .protection-mechanism {
+            display: none;
+        }
+
+        /* Security guard */
+        .security-guard {
+            display: none;
+        }
+
+        /* Content security */
+        .content-security {
+            display: none;
+        }
+
+        /* Protection barrier */
+        .protection-barrier {
+            display: none;
+        }
+
+        /* Security fence */
+        .security-fence {
+            display: none;
+        }
+
+        /* Anti-exploit */
+        .anti-exploit {
+            display: none;
+        }
+
+        /* Security watch */
+        .security-watch {
+            display: none;
+        }
+
+        /* Protection watch */
+        .protection-watch {
+            display: none;
+        }
+
+        /* Security sentinel */
+        .security-sentinel {
+            display: none;
+        }
+
+        /* Protection sentinel */
+        .protection-sentinel {
+            display: none;
+        }
+
+        /* Security guardian */
+        .security-guardian {
+            display: none;
+        }
+
+        /* Protection guardian */
+        .protection-guardian {
+            display: none;
+        }
+
+        /* Security keeper */
+        .security-keeper {
+            display: none;
+        }
+
+        /* Protection keeper */
+        .protection-keeper {
+            display: none;
+        }
+
+        /* Security warden */
+        .security-warden {
+            display: none;
+        }
+
+        /* Protection warden */
+        .protection-warden {
+            display: none;
+        }
+
+        /* Additional Portfolio Styles */
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid #667eea;
+            color: #667eea;
+            background: transparent;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes bounce-soft {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .portfolio-container {
+                padding: 0 15px;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .btn-primary,
+            .btn-outline {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .portfolio-container {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .security-features,
+            .btn-primary,
+            .btn-outline {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -747,211 +1398,254 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-dark relative z-10 dark:bg-light theme-transition">
+    <!-- Projects Section with Carousel and Image Banners -->
+    <section id="projects" class="py-16 bg-card relative z-10 dark:bg-gray-100 theme-transition">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Projects</h2>
                 <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
-                    Some of my recent work and personal projects
+                    Some of my recent work and personal projects - Slide to explore
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Project 1 - Hostel Management -->
-                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
-                    <div class="project-banner banner-hostel">
-                        <i class="fas fa-building banner-icon"></i>
-                        Hostel Management System
+            <!-- Projects Carousel -->
+            <div class="projects-carousel">
+                <div class="projects-slider" id="projects-slider">
+                    <!-- Slide 1 - Hostel Management -->
+                    <div class="project-slide">
+                        <div class="bg-card rounded-2xl overflow-hidden card-hover dark:bg-white dark:shadow-md glass-card project-card">
+                            <div class="project-banner">
+                                <img src="1.png" alt="Hostel Management System" class="project-banner-image">
+                                <div class="project-banner-content">
+                                    <i class="fas fa-building banner-icon"></i>
+                                    Hostel Management System
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold text-primary mb-4">Hostel Management System</h3>
+                                <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                                    <p>2nd Year Class Project</p>
+                                    <p>This platform provides a central hub for students and wardens, simplifying daily tasks and improving communication.</p>
+                                <p>Students can easily update their details, submit digital leave applications, and track mess dues in one place.</p>
+                                <p>For wardens, it offers a streamlined dashboard to review requests, monitor payments, and maintain accurate student</p>
+                                <p>records—saving time and reducing paperwork for everyone.</p>
+
+                                <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Separate pages for wardens and students
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Students can apply for leave and wardens can approve
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Mess payment record keeping
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Works on both phone and computer
+                                    </li>
+                                </ul>
+                                <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                        <i class="fab fa-github"></i>
+                                        Source Code
+                                    </a>
+                                    <a href="https://hostel-management-system-pearl.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                        <i class="fas fa-globe"></i>
+                                        Live Demo
+                                    </a>
+                                    <button class="px-4 py-2 bg-warning text-white rounded-lg hover:bg-amber-600 transition-colors duration-300">
+                                        Held
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Hostel Management System</h3>
-                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                            <p>2nd Year Class Project</p>
-                            This platform provides a central hub for students and wardens, simplifying daily tasks and improving communication. Students can easily update their details, submit digital leave applications, and track mess dues in one place. For wardens, it offers a streamlined dashboard to review requests, monitor payments, and maintain accurate student records—saving time and reducing paperwork for everyone.
-                        </p>
-                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Separate pages for wardens and students
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Students can apply for leave and wardens can approve
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Mess payment record keeping
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Works on both phone and computer
-                            </li>
-                        </ul>
-                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
-                            <a href="https://hostel-management-system-pearl.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                                <i class="fas fa-globe"></i>
-                                Live Demo
-                            </a>
-                            <button class="px-4 py-2 bg-warning text-white rounded-lg hover:bg-amber-600 transition-colors duration-300">
-                                Held
-                            </button>
+
+                    <!-- Slide 2 - BookHub -->
+                    <div class="project-slide">
+                        <div class="bg-card rounded-2xl overflow-hidden card-hover dark:bg-white dark:shadow-md glass-card project-card">
+                            <div class="project-banner">
+                                <img src="4.png" alt="BookHub Library" class="project-banner-image">
+                                <div class="project-banner-content">
+                                    <i class="fas fa-book banner-icon"></i>
+                                    BookHub Library
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold text-primary mb-4">BookHub - Digital Library Platform</h3>
+                                <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                                    <p>"Mini Project"</p>
+                                    A modern React-based digital library application that allows users to discover
+                                    <p> books, manage personal libraries, and track reading progress. Features </p>
+                                    <p>secure authentication and a beautiful dark theme interface.</p>
+                                </p>
+                                <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        User authentication system with secure login
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Personal library management with add/remove functionality
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Advanced search and genre-based filtering
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Responsive design with modern dark theme
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Real book covers and detailed information
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Reading progress tracking and statistics
+                                    </li>
+                                </ul>
+                                <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> React.js/JavaScript/CSS/HTML5/Font Awesome Icons</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                        <i class="fab fa-github"></i>
+                                        Source Code
+                                    </a>
+                                    <a href="https://book-review-app-gamma-pearl.vercel.app/#" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                        <i class="fas fa-globe"></i>
+                                        Live Demo
+                                    </a>
+                                    <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-green-600 transition-colors duration-300">
+                                        In-progress
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 - CareerPath AI -->
+                    <div class="project-slide">
+                        <div class="bg-card rounded-2xl overflow-hidden card-hover dark:bg-white dark:shadow-md glass-card project-card">
+                            <div class="project-banner">
+                                <img src="2.png" alt="CareerPath AI" class="project-banner-image">
+                                <div class="project-banner-content">
+                                    <i class="fas fa-robot banner-icon"></i>
+                                    CareerPath AI
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold text-primary mb-4">CareerPath AI</h3>
+                                <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                                    <p>"Hackathon submitted Project"</p>
+                                   CareerPath AI is an intelligent career guidance platform that uses Google's Gemini AI 
+                                   <p>to provide personalized career recommendations based on your skills, interests, and goals.</p>
+                                </p>
+                                <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Get career suggestions powered by Google Gemini AI.
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                       12-week structured plan with curated resources.
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Identify missing skills and get learning recommendations.
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        3 tailored career paths with match percentages.
+                                    </li>
+                                </ul>
+                                <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="https://github.com/Anubhav7417/CAREERPATH-AI/tree/main" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                        <i class="fab fa-github"></i>
+                                        Source Code
+                                    </a>
+                                    <a href="https://careerpath-ai-neon.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                        <i class="fas fa-globe"></i>
+                                        Live Demo
+                                    </a>
+                                    <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
+                                        Completed
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 - Calculator -->
+                    <div class="project-slide">
+                        <div class="bg-card rounded-2xl overflow-hidden card-hover dark:bg-white dark:shadow-md glass-card project-card">
+                            <div class="project-banner">
+                                <img src="3.png" alt="Smart Calculator" class="project-banner-image">
+                                <div class="project-banner-content">
+                                    <i class="fas fa-calculator banner-icon"></i>
+                                    Smart Calculator
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold text-primary mb-4">Calculator</h3>
+                                <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                                    This is a calculator that can do normal math, tell your age, and change money from one currency to another.
+                                </p>
+                                <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Do normal maths like add, subtract, multiply, and divide
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Find age from date of birth
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Change money between different countries
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check text-success text-sm"></i>
+                                        Easy to use and works on phone or computer
+                                    </li>
+                                </ul>
+                                <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="https://github.com/Anubhav7417/smart-calculator" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                        <i class="fab fa-github"></i>
+                                        Source Code
+                                    </a>
+                                    <a href="https://smart-calculator-a6xr.onrender.com" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                        <i class="fas fa-globe"></i>
+                                        Live Demo
+                                    </a>
+                                    <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
+                                        Completed
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 - BookHub -->
-                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
-                    <div class="project-banner banner-bookhub">
-                        <i class="fas fa-book banner-icon"></i>
-                        BookHub Library
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" id="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-dots" id="carousel-dots">
+                        <!-- Dots will be generated by JavaScript -->
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">BookHub - Digital Library Platform</h3>
-                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                            <p>"Mini Project"</p>
-                            A modern React-based digital library application that allows users to discover books, manage personal libraries, 
-                            and track reading progress. Features secure authentication and a beautiful dark theme interface.
-                        </p>
-                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                User authentication system with secure login
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Personal library management with add/remove functionality
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Advanced search and genre-based filtering
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Responsive design with modern dark theme
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Real book covers and detailed information
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Reading progress tracking and statistics
-                            </li>
-                        </ul>
-                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> React.js/JavaScript/CSS/HTML5/Font Awesome Icons</p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
-                            <a href="https://book-review-app-gamma-pearl.vercel.app/#" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                                <i class="fas fa-globe"></i>
-                                Live Demo
-                            </a>
-                            <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-green-600 transition-colors duration-300">
-                                In-progress
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 - CareerPath AI -->
-                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
-                    <div class="project-banner banner-careerpath">
-                        <i class="fas fa-robot banner-icon"></i>
-                        CareerPath AI
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">CareerPath AI</h3>
-                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                            <p>"Hackathon submitted Project"</p>
-                           CareerPath AI is an intelligent career guidance platform that uses Google's Gemini AI to provide personalized career recommendations based on your skills, interests, and goals.
-                        </p>
-                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Get career suggestions powered by Google Gemini AI.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                               12-week structured plan with curated resources.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Identify missing skills and get learning recommendations.
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                3 tailored career paths with match percentages.
-                            </li>
-                        </ul>
-                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="https://github.com/Anubhav7417/CAREERPATH-AI/tree/main" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
-                            <a href="https://careerpath-ai-neon.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                                <i class="fas fa-globe"></i>
-                                Live Demo
-                            </a>
-                            <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
-                                Completed
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 - Calculator -->
-                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card" style="animation-delay: 0.1s">
-                    <div class="project-banner banner-calculator">
-                        <i class="fas fa-calculator banner-icon"></i>
-                        Smart Calculator
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Calculator</h3>
-                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                            This is a calculator that can do normal math, tell your age, and change money from one currency to another.
-                        </p>
-                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Do normal maths like add, subtract, multiply, and divide
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Find age from date of birth
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Change money between different countries
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                Easy to use and works on phone or computer
-                            </li>
-                        </ul>
-                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="https://github.com/Anubhav7417/smart-calculator" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                                <i class="fab fa-github"></i>
-                                Source Code
-                            </a>
-                            <a href="https://smart-calculator-a6xr.onrender.com" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                                <i class="fas fa-globe"></i>
-                                Live Demo
-                            </a>
-                            <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
-                                Completed
-                            </button>
-                        </div>
-                    </div>
+                    
+                    <button class="carousel-btn next-btn" id="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1145,7 +1839,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-card relative z-10 dark:bg-gray-100 theme-transition">
+    <section id="contact" class="py-16 bg-card relative z-10 dark:bg-gray-100 theme-transition">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
@@ -1470,6 +2164,181 @@
             }
         }
 
+        // Projects Carousel Functionality
+        class ProjectsCarousel {
+            constructor() {
+                this.slider = document.getElementById('projects-slider');
+                this.prevBtn = document.getElementById('prev-btn');
+                this.nextBtn = document.getElementById('next-btn');
+                this.dotsContainer = document.getElementById('carousel-dots');
+                this.slides = document.querySelectorAll('.project-slide');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isAnimating = false;
+                
+                this.init();
+            }
+
+            init() {
+                // Create dots
+                this.createDots();
+                
+                // Add event listeners
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Add keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                });
+                
+                // Add touch/swipe support
+                this.addTouchSupport();
+                
+                // Update initial state
+                this.updateControls();
+            }
+
+            createDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+                    dot.setAttribute('data-slide', i);
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.dotsContainer.appendChild(dot);
+                }
+            }
+
+            nextSlide() {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateSlider();
+                
+                // Add animation class
+                this.slider.classList.add('slide-next');
+                setTimeout(() => {
+                    this.slider.classList.remove('slide-next');
+                    this.isAnimating = false;
+                }, 500);
+            }
+
+            prevSlide() {
+                if (this.isAnimating) return;
+                
+                this.isAnimating = true;
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateSlider();
+                
+                // Add animation class
+                this.slider.classList.add('slide-prev');
+                setTimeout(() => {
+                    this.slider.classList.remove('slide-prev');
+                    this.isAnimating = false;
+                }, 500);
+            }
+
+            goToSlide(slideIndex) {
+                if (this.isAnimating || slideIndex === this.currentSlide) return;
+                
+                this.isAnimating = true;
+                this.currentSlide = slideIndex;
+                this.updateSlider();
+                
+                // Add appropriate animation class
+                const animationClass = slideIndex > this.currentSlide ? 'slide-next' : 'slide-prev';
+                this.slider.classList.add(animationClass);
+                setTimeout(() => {
+                    this.slider.classList.remove(animationClass);
+                    this.isAnimating = false;
+                }, 500);
+            }
+
+            updateSlider() {
+                const translateX = -this.currentSlide * 100;
+                this.slider.style.transform = `translateX(${translateX}%)`;
+                this.updateControls();
+            }
+
+            updateControls() {
+                // Update dots
+                document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+                
+                // Update button states
+                this.prevBtn.disabled = this.currentSlide === 0;
+                this.nextBtn.disabled = this.currentSlide === this.totalSlides - 1;
+            }
+
+            addTouchSupport() {
+                let startX = 0;
+                let currentX = 0;
+                let isDragging = false;
+
+                this.slider.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    currentX = startX;
+                    isDragging = true;
+                });
+
+                this.slider.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    currentX = e.touches[0].clientX;
+                });
+
+                this.slider.addEventListener('touchend', () => {
+                    if (!isDragging) return;
+                    
+                    const diff = startX - currentX;
+                    const minSwipeDistance = 50;
+                    
+                    if (Math.abs(diff) > minSwipeDistance) {
+                        if (diff > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                    
+                    isDragging = false;
+                });
+
+                // Mouse drag support
+                this.slider.addEventListener('mousedown', (e) => {
+                    startX = e.clientX;
+                    currentX = startX;
+                    isDragging = true;
+                    this.slider.style.cursor = 'grabbing';
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    currentX = e.clientX;
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (!isDragging) return;
+                    
+                    const diff = startX - currentX;
+                    const minSwipeDistance = 50;
+                    
+                    if (Math.abs(diff) > minSwipeDistance) {
+                        if (diff > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.prevSlide();
+                        }
+                    }
+                    
+                    isDragging = false;
+                    this.slider.style.cursor = 'grab';
+                });
+            }
+        }
+
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize enhanced particle system
@@ -1489,6 +2358,9 @@
 
             // Initialize magnetic hover
             new MagneticHover();
+
+            // Initialize projects carousel
+            new ProjectsCarousel();
 
             // Animate skill bars when they come into view
             const skillBars = document.querySelectorAll('.skill-bar');
@@ -1569,4 +2441,4 @@
         });
     </script>
 </body>
-</html>
+                                            </html>
