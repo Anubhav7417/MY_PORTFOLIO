@@ -353,6 +353,51 @@
             opacity: 1;
             transform: scale(1);
         }
+
+        /* Project Banner Styles */
+        .project-banner {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .project-banner i {
+            font-size: 3rem;
+            margin-right: 1rem;
+        }
+
+        /* Specific banner colors */
+        .banner-hostel {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+        }
+
+        .banner-bookhub {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+        }
+
+        .banner-careerpath {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .banner-calculator {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        /* Banner icons */
+        .banner-icon {
+            font-size: 2.5rem;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body class="bg-dark text-light min-h-screen relative overflow-x-hidden dark:bg-light dark:text-dark theme-transition">
@@ -381,7 +426,9 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="#home" class="flex items-center magnetic-hover">
-                    <img src="Assets/letter-a.png" alt="Anubhav Logo" class="h-10 w-10 rounded-full mr-2">
+                    <div class="h-10 w-10 rounded-full mr-2 bg-primary flex items-center justify-center text-white font-bold">
+                        A
+                    </div>
                     <span class="text-xl font-bold gradient-text">Anubhav</span>
                 </a>
                 
@@ -419,7 +466,9 @@
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
                 <a href="#home" class="flex items-center">
-                    <img src="Assets/letter-a.png" alt="Anubhav Logo" class="h-8 w-8 rounded-full mr-2">
+                    <div class="h-8 w-8 rounded-full mr-2 bg-primary flex items-center justify-center text-white font-bold">
+                        A
+                    </div>
                     <span class="text-lg font-bold gradient-text">Anubhav</span>
                 </a>
                 <button id="close-menu" class="text-secondary dark:text-gray-600">
@@ -455,6 +504,7 @@
             </div>
         </div>
     </div>
+
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-20 relative z-10">
         <div class="container mx-auto px-6 py-20">
@@ -499,7 +549,7 @@
                             <i class="fas fa-paper-plane"></i>
                             Get in Touch
                         </a>
-                        <a href="Assets/resume...pdf" target="_blank" class="px-8 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2">
+                        <a href="#" target="_blank" class="px-8 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2">
                             <i class="fas fa-file-lines"></i>
                             View CV
                         </a>
@@ -697,116 +747,6 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-card relative z-10 dark:bg-gray-100 theme-transition">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 gradient-text">Certifications</h2>
-                <p class="text-lg text-secondary max-w-2xl mx-auto dark:text-gray-600">
-                    Professional certifications and achievements
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Certification 1 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card">
-                    <div class="flex items-start justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary">META FRONTEND DEVELOPER</h3>
-                            <p class="text-secondary dark:text-gray-600">Meta, 2025</p>
-                        </div>
-                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-meta text-primary"></i>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-4">
-                        <a href="Assets/Front End Developer.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-file-pdf"></i>
-                            View Certificate
-                        </a>
-                        <a href="https://share.google/0tW5rPIgG0ROt4HS7" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Credential
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certification 2 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card" style="animation-delay: 0.1s">
-                    <div class="flex items-start justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary">MICROSOFT AZURE DEVELOPER</h3>
-                            <p class="text-secondary dark:text-gray-600">Microsoft, 2025</p>
-                        </div>
-                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-microsoft text-accent"></i>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-4">
-                        <a href="Assets/Azure AI Essentials.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-file-pdf"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certification 3 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card" style="animation-delay: 0.2s">
-                    <div class="flex items-start justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary">CYBERSECURITY ENGINEER</h3>
-                            <p class="text-secondary dark:text-gray-600">Google, 2025</p>
-                        </div>
-                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
-                            <i class="fab fa-google text-success"></i>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-4">
-                        <a href="Assets/Cyber Security Professional.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-file-pdf"></i>
-                            View Certificate
-                        </a>
-                        <a href="https://share.google/89nldAXrYSiTJCxfD" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Credential
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Certification 4 -->
-                <div class="bg-dark rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card" style="animation-delay: 0.3s">
-                    <div class="flex items-start justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary">AI/ML ENGINEER</h3>
-                            <p class="text-secondary dark:text-gray-600">AI/ML (Microsoft), 2025</p>
-                        </div>
-                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-robot text-warning"></i>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-4">
-                        <a href="Assets/AI & ML Engineering.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-file-pdf"></i>
-                            View Certificate
-                        </a>
-                        <a href="https://share.google/Lg7LbpDRCH1r29smP" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 text-sm magnetic-hover">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Credential
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Google Drive Link -->
-            <div class="text-center mt-12">
-                <a href="https://drive.google.com/drive/folders/1c9x8i49PSmxRaD_USLw-6-1x-JDHPY7u?role=reader" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                    <i class="fab fa-google-drive"></i>
-                    View All Certifications on My Google Drive.
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-dark relative z-10 dark:bg-light theme-transition">
         <div class="container mx-auto px-6">
@@ -818,178 +758,206 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Project 1 -->
-                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
-                    <h3 class="text-2xl font-semibold text-primary mb-4">Hostel Management System</h3>
-                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                        <p> 2nd Year Class Project</p>
-                        This platform provides a central hub for students and wardens, simplifying daily tasks and improving communication. Students can easily update their details, submit digital leave applications, and track mess dues in one place. For wardens, it offers a streamlined dashboard to review requests, monitor payments, and maintain accurate student records—saving time and reducing paperwork for everyone.
-                    </p>
-                    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Separate pages for wardens and students
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Students can apply for leave and wardens can approve
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Mess payment record keeping
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Works on both phone and computer
-                        </li>
-                    </ul>
-                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                            <i class="fab fa-github"></i>
-                            Source Code
-                        </a>
-                        <a href="https://hostel-management-system-pearl.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                            <i class="fas fa-globe"></i>
-                            Live Demo
-                        </a>
-                        <button class="px-4 py-2 bg-warning text-white rounded-lg hover:bg-amber-600 transition-colors duration-300">
-                            Held
-                        </button>
+                <!-- Project 1 - Hostel Management -->
+                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
+                    <div class="project-banner banner-hostel">
+                        <i class="fas fa-building banner-icon"></i>
+                        Hostel Management System
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Hostel Management System</h3>
+                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                            <p>2nd Year Class Project</p>
+                            This platform provides a central hub for students and wardens, simplifying daily tasks and improving communication. Students can easily update their details, submit digital leave applications, and track mess dues in one place. For wardens, it offers a streamlined dashboard to review requests, monitor payments, and maintain accurate student records—saving time and reducing paperwork for everyone.
+                        </p>
+                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Separate pages for wardens and students
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Students can apply for leave and wardens can approve
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Mess payment record keeping
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Works on both phone and computer
+                            </li>
+                        </ul>
+                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/Anubhav7417/HOSTEL-MANAGEMENT-SYSTEM" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                            <a href="https://hostel-management-system-pearl.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                <i class="fas fa-globe"></i>
+                                Live Demo
+                            </a>
+                            <button class="px-4 py-2 bg-warning text-white rounded-lg hover:bg-amber-600 transition-colors duration-300">
+                                Held
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <!-- Project 2-->
-<div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
-    <h3 class="text-2xl font-semibold text-primary mb-4">BookHub - Digital Library Platform</h3>
-    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-        <p>"Mini Project"</p>
-        A modern React-based digital library application that allows users to discover books, manage personal libraries, 
-        and track reading progress. Features secure authentication and a beautiful dark theme interface.
-    </p>
-    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-        <li class="flex items-center gap-2">
-            <i class="fas fa-check text-success text-sm"></i>
-            User authentication system with secure login
-        </li>
-        <li class="flex items-center gap-2">
-            <i class="fas fa-check text-success text-sm"></i>
-            Personal library management with add/remove functionality
-        </li>
-        <li class="flex items-center gap-2">
-            <i class="fas fa-check text-success text-sm"></i>
-            Advanced search and genre-based filtering
-        </li>
-        <li class="flex items-center gap-2">
-            <i class="fas fa-check text-success text-sm"></i>
-            Responsive design with modern dark theme
-        </li>
-        <li class="flex items-center gap-2">
-            <i class="fas fa-check text-success text-sm"></i>
-            Real book covers and detailed information
-        </li>
-        <li class="flex items-center gap-2">
-            <i class="fas fa-check text-success text-sm"></i>
-            Reading progress tracking and statistics
-        </li>
-    </ul>
-    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> React.js/JavaScript/CSS/HTML5/Font Awesome Icons</p>
-    <div class="flex flex-wrap gap-4">
-        <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-            <i class="fab fa-github"></i>
-            Source Code
-        </a>
-        <a href="https://book-review-app-gamma-pearl.vercel.app/#" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-            <i class="fas fa-globe"></i>
-            Live Demo
-        </a>
-        <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-green-600 transition-colors duration-300">
-            In-progress
-        </button>
-    </div>
-</div>
-                <!-- Project 3-->
-                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
-                    <h3 class="text-2xl font-semibold text-primary mb-4">CareerPath AI</h3>
-                    <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
-                        <p>"Hackathon submitted Project"</p>
-                       CareerPath AI is an intelligent career guidance platform that uses Google's Gemini AI to provide personalized career recommendations based on your skills, interests, and goals.
-                    </p>
-                    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Get career suggestions powered by Google Gemini AI.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                           12-week structured plan with curated resources.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Identify missing skills and get learning recommendations.
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            3 tailored career paths with match percentages.
-                        </li>
-                    </ul>
-                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/Anubhav7417/CAREERPATH-AI/tree/main" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                            <i class="fab fa-github"></i>
-                            Source Code
-                        </a>
-                        <a href="https://careerpath-ai-neon.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                            <i class="fas fa-globe"></i>
-                            Live Demo
-                        </a>
-                        <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
-                            Completed
-                        </button>
+
+                <!-- Project 2 - BookHub -->
+                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
+                    <div class="project-banner banner-bookhub">
+                        <i class="fas fa-book banner-icon"></i>
+                        BookHub Library
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">BookHub - Digital Library Platform</h3>
+                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                            <p>"Mini Project"</p>
+                            A modern React-based digital library application that allows users to discover books, manage personal libraries, 
+                            and track reading progress. Features secure authentication and a beautiful dark theme interface.
+                        </p>
+                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                User authentication system with secure login
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Personal library management with add/remove functionality
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Advanced search and genre-based filtering
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Responsive design with modern dark theme
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Real book covers and detailed information
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Reading progress tracking and statistics
+                            </li>
+                        </ul>
+                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> React.js/JavaScript/CSS/HTML5/Font Awesome Icons</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/Anubhav7417/BOOK_REVIEW_APP" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                            <a href="https://book-review-app-gamma-pearl.vercel.app/#" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                <i class="fas fa-globe"></i>
+                                Live Demo
+                            </a>
+                            <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-green-600 transition-colors duration-300">
+                                In-progress
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <!-- Project 4 -->
-                <div class="bg-card rounded-2xl p-6 card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card" style="animation-delay: 0.1s">
-                    <h3 class="text-2xl font-semibold text-primary mb-4">Calculator</h3>
-                    <p class="">
-                        This is a calculator that can do normal math, tell your age, and change money from one currency to another.
-                    </p>
-                    <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Do normal maths like add, subtract, multiply, and divide
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Find age from date of birth
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Change money between different countries
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-success text-sm"></i>
-                            Easy to use and works on phone or computer
-                        </li>
-                    </ul>
-                    <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/Anubhav7417/smart-calculator" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
-                            <i class="fab fa-github"></i>
-                            Source Code
-                        </a>
-                        <a href="https://smart-calculator-a6xr.onrender.com" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
-                            <i class="fas fa-globe"></i>
-                            Live Demo
-                        </a>
-                        <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
-                            completed
-                        </button>
+
+                <!-- Project 3 - CareerPath AI -->
+                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card">
+                    <div class="project-banner banner-careerpath">
+                        <i class="fas fa-robot banner-icon"></i>
+                        CareerPath AI
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">CareerPath AI</h3>
+                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                            <p>"Hackathon submitted Project"</p>
+                           CareerPath AI is an intelligent career guidance platform that uses Google's Gemini AI to provide personalized career recommendations based on your skills, interests, and goals.
+                        </p>
+                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Get career suggestions powered by Google Gemini AI.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                               12-week structured plan with curated resources.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Identify missing skills and get learning recommendations.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                3 tailored career paths with match percentages.
+                            </li>
+                        </ul>
+                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/Anubhav7417/CAREERPATH-AI/tree/main" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                            <a href="https://careerpath-ai-neon.vercel.app/" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                <i class="fas fa-globe"></i>
+                                Live Demo
+                            </a>
+                            <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
+                                Completed
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Calculator -->
+                <div class="bg-card rounded-2xl overflow-hidden card-hover animate-fade-in-up dark:bg-white dark:shadow-md glass-card project-card" style="animation-delay: 0.1s">
+                    <div class="project-banner banner-calculator">
+                        <i class="fas fa-calculator banner-icon"></i>
+                        Smart Calculator
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">Calculator</h3>
+                        <p class="text-secondary mb-4 leading-relaxed dark:text-gray-600">
+                            This is a calculator that can do normal math, tell your age, and change money from one currency to another.
+                        </p>
+                        <ul class="text-secondary mb-6 space-y-2 dark:text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Do normal maths like add, subtract, multiply, and divide
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Find age from date of birth
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Change money between different countries
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                Easy to use and works on phone or computer
+                            </li>
+                        </ul>
+                        <p class="text-secondary mb-4 dark:text-gray-600"><strong>Technologies Used:</strong> HTML/CSS/JS</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/Anubhav7417/smart-calculator" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 magnetic-hover">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                            <a href="https://smart-calculator-a6xr.onrender.com" target="_blank" class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 magnetic-hover">
+                                <i class="fas fa-globe"></i>
+                                Live Demo
+                            </a>
+                            <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-emerald-600 transition-colors duration-300">
+                                Completed
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <!-- GitHub Section -->
+
+    <!-- GitHub Section -->
     <section id="Github" class="py-20 bg-card relative z-10 dark:bg-gray-100 theme-transition">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
